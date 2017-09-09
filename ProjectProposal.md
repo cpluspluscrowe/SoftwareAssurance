@@ -70,9 +70,11 @@ The application itself has also grown in the last year, adding Groovy, shell scr
  ## Platform
 
 Jenkins largely runs on the JVM, so it is open platform and runs on MacOS, Windows, and Linux OS.
+Running Jenkins requires either Java 8 or Docker.
 
 ## Documentation sources
 
+The [Jenkins Documentation Home Page](https://jenkins.io/doc/) provides a great deal of easily accessible information, including a guided tour, a user handbook and plenty of resources and tutorials.
 
 ## Discuss License
 
@@ -80,7 +82,12 @@ Jenkins is under the MIT license, so its software can be used publically or priv
 
 ## Procedures for making contributions
 
+The procedures for making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page.
+
 ## Contributor agreements (Links to an external site.)
+
+As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests"
+* https://jenkins.io/participate/
 
 ## Security related history (E.g. known vulnerabilities)
 
