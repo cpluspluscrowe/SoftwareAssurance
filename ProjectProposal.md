@@ -57,6 +57,8 @@ Jenkins largely runs on the JVM, so it is open platform and runs on MacOS, Windo
 
 Discuss License,
 
+Jenkins is under the MIT license, so its software can be used publically or privately, as long as the copyright notice is included in all copies or substantial portions of the software.  I'm also assuming that the client must publically disclose that they've utilized Jenkins within their software project.
+
 procedures for making contributions, and
 
 contributor agreements (Links to an external site.)
