@@ -101,7 +101,4 @@ And while the codebase is considered well established and mature, its history co
 
 ## Motivation for selecting this project
 
-Link to your team github repository that shows your project (Links to an external site.)Links to an external site. plan (Links to an
-external site.)Links to an external site. and internal collaboration
-
-our forked project: https://github.com/larrysingleton/jenkins
+Project forked here: https://github.com/larrysingleton/jenkins
