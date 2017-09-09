@@ -99,6 +99,8 @@ And while the codebase is considered well established and mature, its history co
 
 ## Functional security requirements for the software
 
+Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) to aid in project configuration. Additional project security concerns are kept in the [project board](https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2).
+
 ## Motivation for selecting this project
 
 * Project board: https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2
