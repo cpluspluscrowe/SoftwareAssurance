@@ -20,6 +20,9 @@ Since its founding, Jenkins has skyrocketed into a leading provider for continuo
 The project itself has near 100,000 commits by 2,000 contributors and over a million lines of code.  As one might expect, due to its beginnings from a Sun developer and Oracle's support, most of Jenkins is written in Java with plenty of JavaScript supporting its UI.  
 
 ![](assets/markdown-img-paste-20170909112134478.png)
+
+You can see a peak in Jenkin's development in 2011 when it was officially released.  In coming years, the development pace has stabilized and continued.  In just the last thirty days, an incredible 433 contributors have added to Jenkins.  More surprisingly, 309 of those 433 developers were new contributors.  That statistic was incredibly influential in our decision to chose Jenkins, as Jenkins encourages new users to contribute to the overall project.   
+
  Use,
 
  Popularity,
