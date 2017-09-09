@@ -93,6 +93,8 @@ As a contributor, "you activiely help improve Jenkins and plugins by contributin
 
 And while the codebase is considered well established and mature, its history contains more than a few vulnerabilities.  Many of these vulnerabilities can be traced to its rapid development, huge codebase, and possibly superfluous plugins.  
 
+* https://openhub.net/p/jenkins/security
+
 ![](assets/markdown-img-paste-20170909115438746.png)
 
 ## Functional security requirements for the software
