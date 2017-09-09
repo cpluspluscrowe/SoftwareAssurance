@@ -31,6 +31,10 @@ The number of commits, as well as the percentage growth of commits, within the l
 
  Use,
 
+Companies that user Jenkins include eBay, Cloudera, GitHub, ITA software by Google, LinkedIn, NASA, Netflix, Sony, the UK Government, Yahoo, and many more.  Open source projects currently utilizing Jenkins include Djangos CMS, Apache, JBoss, Mozilla, SQLAlchemy, and Twitter4J.
+
+
+
  Popularity,
 
  Languages used,
