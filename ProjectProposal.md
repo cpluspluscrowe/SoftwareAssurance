@@ -101,4 +101,5 @@ And while the codebase is considered well established and mature, its history co
 
 ## Motivation for selecting this project
 
-Project forked here: https://github.com/larrysingleton/jenkins
+Project board: https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2
+Jenkins forked: https://github.com/larrysingleton/jenkins
