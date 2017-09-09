@@ -3,7 +3,7 @@
 **This file will house our project proposal for Jenkins**
 
 
-**Open source project description** (
+**Open source project description**
  
 ** What is it? **
  Jenkins is a better way to test and deploy software.  It performs these tasks by automating much of the process.  This automation is setup via Jenkins helpful UIs that visualize building, testing, and deploying your software.  Upon setup, Jenkins serves as an invaluable quality control tool, allowing users to automatically monitor their repositories, build software, and run relevant tests.
