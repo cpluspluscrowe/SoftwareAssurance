@@ -6,6 +6,11 @@ Open source project description (
 
  The impressive Jenkins website https://jenkins.io/index.html endorses and open source, touting itself as the leading open source automation server, while tacitly equipped with hundreds of handy plugins to encourage a deftly build and deploy for any project.  More specifically, Jenkins highlights many of its core features like its continuous integration, easy installation, configuration, extensibility while also being distributed across many machines.  Such impressive features, its wide adoption, and openness to the open-source community highlighted Jenkins as an apt project for our group.
 
+ Our group sought out greater detail on Jenkins from openhub https://www.openhub.net/p/jenkins and its GitHub site https://github.com/kohsuke/jenkins to ascertain insights on this innovative and open source project.  GitHub further highlighted Jenkin's static code analysis features.  We're hopeful that we might adapt such static code analysis on Jenkins itself,  which seemed like a fun and original idea.  The openhub site mentioned the large number of outside contributions to Jenkins, lauding some 1300 plugins within the Jenkins library to supplement project builds, tests, logging, analysis, graphing, and notifications with your project needs.  
+
+ Founded in 2004 by Kawaguchi while at the somewhat infamous Sun, the Hudson project as forked and within a few years, Jenkins was born. Humorously, the community around Oracle's Hudson project moved to work on Jenkins, though Kawaguchi was also the founder of Hudson, which I'm sure played into the 213 vs 13 vote to fork the project from Hudson.  That's some serious karma for Oracle, who sought to trademark Hudson and vainly insisted it was deployed exclusively on Oracle servers.
+ 
+
  Activity,
 
  Use,
