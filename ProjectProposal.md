@@ -10,8 +10,8 @@
   * [Documentation sources](#documentation-sources)
   * [Discuss License](#discuss-license)
   * [Procedures for making contributions](#procedures-for-making-contributions)
-  * [Contributor agreements (Links to an external site.)](#contributor-agreements--links-to-an-external-site-)
-  * [Security related history (E.g. known vulnerabilities)](#security-related-history--eg-known-vulnerabilities-)
+  * [Contributor agreements](#contributor-agreements)
+  * [Security related history](#security-related-history)
   * [Functional security requirements for the software](#functional-security-requirements-for-the-software)
   * [Motivation for selecting this project](#motivation-for-selecting-this-project)
 
@@ -84,12 +84,12 @@ Jenkins is under the MIT license, so its software can be used publically or priv
 
 The procedures for making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page.
 
-## Contributor agreements (Links to an external site.)
+## Contributor agreements
 
 As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests"
 * https://jenkins.io/participate/
 
-## Security related history (E.g. known vulnerabilities)
+## Security related history
 
 And while the codebase is considered well established and mature, its history contains more than a few vulnerabilities.  Many of these vulnerabilities can be traced to its rapid development, huge codebase, and possibly superfluous plugins.  
 
