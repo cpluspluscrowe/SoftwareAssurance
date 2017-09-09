@@ -23,11 +23,15 @@ The project itself has near 100,000 commits by 2,000 contributors and over a mil
 
 You can see a peak in Jenkin's development in 2011 when it was officially released.  In coming years, the development pace has stabilized and continued.  In just the last thirty days, an incredible 433 contributors have added to Jenkins.  More surprisingly, 309 of those 433 developers were new contributors.  That statistic was incredibly influential in our decision to chose Jenkins, as Jenkins encourages new users to contribute to the overall project.   
 
+The number of commits, as well as the percentage growth of commits, within the last year shows a growing embracement of continuous integration by the developer community.  
+
  Use,
 
  Popularity,
 
  Languages used,
+
+The application itself has also grown in the last year, adding Groovy, shell script, DOS batch script, JavaScript, and CSS to its arsenal of tools.
 
  platform,
 
