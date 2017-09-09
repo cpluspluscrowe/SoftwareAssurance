@@ -27,6 +27,7 @@ You can see a peak in Jenkin's development in 2011 when it was officially releas
 ![](assets/markdown-img-paste-2017090911553318.png)
 
 The number of commits, as well as the percentage growth of commits, within the last year shows a growing embracement of continuous integration by the developer community.  
+* https://openhub.net/p/jenkins/contributors/summary
 
 ![](assets/markdown-img-paste-20170909114858928.png)
 
