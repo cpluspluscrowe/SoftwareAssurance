@@ -2,7 +2,7 @@ This file will house our project proposal for Jenkins
 
 Open source project description (
  What is it?,
- Jenkins is a better way to test and deploy software.  It performs these tasks by automating much of the process.  This automation is setup via Jenkins helpful UIs that visualize building, testing, and deploying your software.  Upon setup, Jenkins serves as an invaluable quality control tool, allowing users to atomically monitor their repositories, build software, and run relevant tests.
+ Jenkins is a better way to test and deploy software.  It performs these tasks by automating much of the process.  This automation is setup via Jenkins helpful UIs that visualize building, testing, and deploying your software.  Upon setup, Jenkins serves as an invaluable quality control tool, allowing users to automatically monitor their repositories, build software, and run relevant tests.
 
  The impressive Jenkins website https://jenkins.io/index.html endorses and open source, touting itself as the leading open source automation server, while tacitly equipped with hundreds of handy plugins to encourage a deftly build and deploy for any project.  More specifically, Jenkins highlights many of its core features like its continuous integration, easy installation, configuration, extensibility while also being distributed across many machines.  Such impressive features, its wide adoption, and openness to the open-source community highlighted Jenkins as an apt project for our group.
 
@@ -16,6 +16,8 @@ Open source project description (
 Since its founding, Jenkins has skyrocketed into a leading provider for continuous integration.  
 
 The project itself has near 100,000 commits by 2,000 contributors and over a million lines of code.  As one might expect, due to its beginnings from a Sun developer and Oracle's support, most of Jenkins is written in Java with plenty of JavaScript supporting its UI.  
+
+![alt text](Activity.png "Activity")
 
  Use,
 
