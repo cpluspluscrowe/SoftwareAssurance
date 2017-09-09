@@ -1,3 +1,5 @@
+![](assets/markdown-img-paste-20170909112804883.png)
+
 This file will house our project proposal for Jenkins
 
 Open source project description (
@@ -17,8 +19,7 @@ Since its founding, Jenkins has skyrocketed into a leading provider for continuo
 
 The project itself has near 100,000 commits by 2,000 contributors and over a million lines of code.  As one might expect, due to its beginnings from a Sun developer and Oracle's support, most of Jenkins is written in Java with plenty of JavaScript supporting its UI.  
 
-![alt text](Activity.png "Activity")
-
+![](assets/markdown-img-paste-20170909112134478.png)
  Use,
 
  Popularity,
