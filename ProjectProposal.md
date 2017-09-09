@@ -37,11 +37,19 @@ Companies that user Jenkins include eBay, Cloudera, GitHub, ITA software by Goog
 
  Popularity,
 
+Using Google Trends, we can see that Jenkins has continued to gain popularity over the last few years.
+![](assets/markdown-img-paste-20170909123303852.png)
+
+Regionally, its popularity has increased overseas with the US being Country #4 in searches including Jenkins.
+![](assets/markdown-img-paste-20170909123424538.png)
+
  Languages used,
 
 The application itself has also grown in the last year, adding Groovy, shell script, DOS batch script, JavaScript, and CSS to its arsenal of tools.
 
  platform,
+
+Jenkins largely runs on the JVM, so it is open platform and runs on MacOS, Windows, and Linux OS.
 
  documentation sources,
 
