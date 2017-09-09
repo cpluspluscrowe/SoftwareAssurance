@@ -45,7 +45,8 @@ Regionally, its popularity has increased overseas with the US being Country #4 i
 
  ## Languages used
 
-The application itself has also grown in the last year, adding Groovy, shell script, DOS batch script, JavaScript, and CSS to its arsenal of tools.
+The application itself has also grown in the last year, adding Groovy, shell script, DOS batch script, JavaScript, and CSS to its arsenal of tools. The top languages used by lines of code are Java, XML, JavaScript & CSS.
+* https://openhub.net/p/jenkins/analyses/latest/languages_summary
 
  ## Platform
 
