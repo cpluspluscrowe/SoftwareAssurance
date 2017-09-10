@@ -78,17 +78,18 @@ The [Jenkins Documentation Home Page](https://jenkins.io/doc/) provides a great 
 
 ## Discuss License
 
-Jenkins is under the MIT license, so its software can be used publically or privately, as long as the copyright notice is included in all copies or substantial portions of the software.  I'm also assuming that the client must publically disclose that they've utilized Jenkins within their software project.
+The Jenkins core is under the [MIT license](https://opensource.org/licenses/MIT), so its software can be used publically or privately, as long as the copyright notice is included in all copies or substantial portions of the software.  I'm also assuming that the client must publically disclose that they've utilized Jenkins within their software project.
 
 ## Procedures for making contributions
 
-The procedures for making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page.
+The options for participating and making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page. A beginner’s guide A guide for new contributors can be found at on their [wiki](https://wiki.jenkins.io/display/JENKINS/Beginners+Guide+to+Contributing) 
 
 ## Contributor agreements
-
 As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests"
 * https://jenkins.io/participate/
 
+Committers must sign a contributor’s license agreement (CLA). This provides certain rights to contributors, such as the right to contribute, copyright ownership, and a patent grant. If a company is placing an employee on the project, the company must such a Corporate CLA.
+	
 ## Security related history
 
 And while the codebase is considered well established and mature, its history contains more than a few vulnerabilities.  Many of these vulnerabilities can be traced to its rapid development, huge codebase, and possibly superfluous plugins.  
