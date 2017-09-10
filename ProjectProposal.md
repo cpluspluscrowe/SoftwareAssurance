@@ -82,19 +82,20 @@ The Jenkins core is under the [MIT license](https://opensource.org/licenses/MIT)
 
 ## Procedures for making contributions
 
-The options for participating and making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page. A beginner’s guide A guide for new contributors can be found at on their [wiki](https://wiki.jenkins.io/display/JENKINS/Beginners+Guide+to+Contributing) 
+The options for participating and making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page. A beginner’s guide for new contributors can be found on their [wiki](https://wiki.jenkins.io/display/JENKINS/Beginners+Guide+to+Contributing) 
 
 ## Contributor agreements
 As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests"
 * https://jenkins.io/participate/
 
-Committers must sign a contributor’s license agreement (CLA). This provides certain rights to contributors, such as the right to contribute, copyright ownership, and a patent grant. If a company is placing an employee on the project, the company must such a Corporate CLA.
+Committers must sign a contributor’s license agreement (CLA). This provides certain rights to contributors, such as the right to contribute, copyright ownership, and a patent grant. If a company is placing an employee on the project, the company must sign a Corporate CLA.
 	
 ## Security related history
 
 And while the codebase is considered well established and mature, its history contains more than a few vulnerabilities.  Many of these vulnerabilities can be traced to its rapid development, huge codebase, and possibly superfluous plugins.  
 
 * https://openhub.net/p/jenkins/security
+* https://www.cvedetails.com/vendor/15865/Jenkins.html
 
 ![](assets/markdown-img-paste-20170909115438746.png)
 
