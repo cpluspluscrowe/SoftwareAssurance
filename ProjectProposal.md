@@ -106,5 +106,9 @@ Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JEN
 
 ## Motivation for selecting this project
 
+Jenkins is a very interesting project that a good number of major companies now rely on for their continuous integration and deploying capabilities. Once any company puts in architecture which changes their workflow and more importantly, builds and deploys their code, they need to worry about security. With as many security bugs as has been found very recently, it appears the more eyes on the software the better. 
+
+## Team Links
+
 * Project board: https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2
 * Jenkins forked: https://github.com/larrysingleton/jenkins
