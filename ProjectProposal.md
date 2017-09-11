@@ -52,7 +52,7 @@ The number of commits, as well as the percentage growth of commits, within the l
 
 ## Use
 
-Companies that user Jenkins include eBay, Cloudera, GitHub, ITA software by Google, LinkedIn, NASA, Netflix, Sony, the UK Government, Yahoo, and many more.  Open source projects currently utilizing Jenkins include Djangos CMS, Apache, JBoss, Mozilla, SQLAlchemy, and Twitter4J.
+Companies that make use of Jenkins include eBay, Cloudera, GitHub, ITA software by Google, LinkedIn, NASA, Netflix, Sony, the UK Government, Yahoo, and many more.  Open source projects currently utilizing Jenkins include Django CMS, Apache, JBoss, Mozilla, SQLAlchemy, and Twitter4J.
 
 ## Popularity
 
@@ -69,23 +69,22 @@ The application itself has also grown in the last year, adding Groovy, shell scr
 
  ## Platform
 
-Jenkins largely runs on the JVM, so it is open platform and runs on MacOS, Windows, and Linux OS.
-Running Jenkins requires either Java 8 or Docker.
+Jenkins largely runs on the JVM, so Jenkins is able to run on any operating system capable of running either Java 8 or Docker.
 
 ## Documentation sources
 
-The [Jenkins Documentation Home Page](https://jenkins.io/doc/) provides a great deal of easily accessible information, including a guided tour, a user handbook and plenty of resources and tutorials.
+The [Jenkins Documentation Home Page](https://jenkins.io/doc/) provides a great deal of easily accessible information, including a guided tour, user handbook, tutorials, and plenty of other resources.
 
 ## Discuss License
 
-The Jenkins core is under the [MIT license](https://opensource.org/licenses/MIT), so its software can be used publically or privately, as long as the copyright notice is included in all copies or substantial portions of the software.  I'm also assuming that the client must publically disclose that they've utilized Jenkins within their software project.
+The Jenkins core is under the [MIT license](https://opensource.org/licenses/MIT), so its software can be used publically or privately, as long as the copyright notice is included in all copies or substantial portions of the software.  This assumes that the client must publically disclose that they've utilized Jenkins within their software project.
 
 ## Procedures for making contributions
 
-The options for participating and making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page. A beginner’s guide for new contributors can be found on their [wiki](https://wiki.jenkins.io/display/JENKINS/Beginners+Guide+to+Contributing) 
+The options for participating and making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page. A beginner’s guide for new contributors can be found on their [wiki](https://wiki.jenkins.io/display/JENKINS/Beginners+Guide+to+Contributing). 
 
 ## Contributor agreements
-As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests"
+As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests."
 * https://jenkins.io/participate/
 
 Committers must sign a contributor’s license agreement (CLA). This provides certain rights to contributors, such as the right to contribute, copyright ownership, and a patent grant. If a company is placing an employee on the project, the company must sign a Corporate CLA.
