@@ -93,6 +93,7 @@ Committers must sign a contributor’s license agreement (CLA). This provides ce
 
 And while the codebase is considered well established and mature, its history contains more than a few vulnerabilities.  Many of these vulnerabilities can be traced to its rapid development, huge codebase, and possibly superfluous plugins.  
 
+* https://jenkins.io/security/advisories/
 * https://openhub.net/p/jenkins/security
 * https://www.cvedetails.com/vendor/15865/Jenkins.html
 
