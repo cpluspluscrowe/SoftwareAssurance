@@ -21,8 +21,8 @@
 
 # **Open source project description**
  
-### What is it?
-##### Overview
+## What is it?
+### Overview
  Jenkins is a better way to test and deploy software.  It performs these tasks by automating much of the process.  This automation is setup via Jenkins helpful UIs that visualize building, testing, and deploying your software.  Upon setup, Jenkins serves as an invaluable quality control tool, allowing users to automatically monitor their repositories, build software, and run relevant tests.
 
  The impressive Jenkins website https://jenkins.io/index.html endorses open source, touting itself as the leading open source automation server, while tacitly equipped with hundreds of handy plugins to encourage a deftly build and deploy for any project.  More specifically, Jenkins highlights many of its core features like its continuous integration, easy installation, configuration, extensibility while also being distributed across many machines.  Such impressive features, its wide adoption, and openness to the open-source community highlighted Jenkins as an appropriate project for our group.
@@ -32,7 +32,7 @@
  Founded in 2004 by Kawaguchi while at the somewhat infamous Sun, the Hudson project was forked and within a few years, Jenkins was born. Humorously, the community around Oracle's Hudson project moved to work on Jenkins, though Kawaguchi was also the founder of Hudson, which I'm sure played into the 213 vs 13 vote to fork the project from Hudson.  That's some serious karma for Oracle, who sought to trademark Hudson and vainly insisted it was deployed exclusively on Oracle servers.
 
 
-##### Activity
+### Activity
 
 Since its founding, Jenkins has skyrocketed into a leading provider for continuous integration.  
 
@@ -51,11 +51,11 @@ The number of commits, as well as the percentage growth of commits, within the l
 
 ![](assets/markdown-img-paste-20170909114858928.png)
 
-##### Use
+### Use
 
 Companies that make use of Jenkins include eBay, Cloudera, GitHub, ITA software by Google, LinkedIn, NASA, Netflix, Sony, the UK Government, Yahoo, and many more.  Open source projects currently utilizing Jenkins include Django CMS, Apache, JBoss, Mozilla, SQLAlchemy, and Twitter4J.
 
-##### Popularity
+### Popularity
 
 Using Google Trends, we can see that Jenkins has continued to gain popularity over the last few years.
 ![](assets/markdown-img-paste-20170909123303852.png)
@@ -63,16 +63,16 @@ Using Google Trends, we can see that Jenkins has continued to gain popularity ov
 Regionally, its popularity has increased overseas with the US being Country #4 in searches including Jenkins.
 ![](assets/markdown-img-paste-20170909123424538.png)
 
-##### Languages used
+### Languages used
 
 The application itself has also grown in the last year, adding Groovy, shell script, DOS batch script, JavaScript, and CSS to its arsenal of tools. The top languages used by lines of code are Java, XML, JavaScript & CSS.
 * https://openhub.net/p/jenkins/analyses/latest/languages_summary
 
-##### Platform
+### Platform
 
 Jenkins largely runs on the JVM, so Jenkins is able to run on any operating system capable of running either Java 8 or Docker.
 
-##### Documentation sources
+### Documentation sources
 
 The [Jenkins Documentation Home Page](https://jenkins.io/doc/) provides a great deal of easily accessible information, including a guided tour, user handbook, tutorials, and plenty of other resources.
 
