@@ -95,7 +95,7 @@ Committers must sign a contributor’s license agreement (CLA). This provides ce
 
 ## Security related history
 
-And while the codebase is considered well established and mature, its history contains more than a few vulnerabilities.  Many of these vulnerabilities can be traced to its rapid development, huge codebase, and possibly superfluous plugins. One of the more recent, severe examples was a remote code injection vulnerability affecting the entire Jenkins community earlier this year. Bugs like these can really hurt a community if not handled well because both people and companies can start to not trust the software.
+And while the codebase is considered well established and mature, its history contains more than a few vulnerabilities.  Many of these vulnerabilities can be traced to its rapid development, huge codebase, and possibly superfluous plugins. One of the more recent severe examples was a remote code injection vulnerability affecting the entire Jenkins community earlier this year. Bugs like these can really hurt a community if not handled well because both people and companies falter in their trust for the software.
 
 * https://jenkins.io/security/advisories/
 * https://openhub.net/p/jenkins/security
