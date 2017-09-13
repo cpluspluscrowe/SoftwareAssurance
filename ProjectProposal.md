@@ -109,9 +109,7 @@ Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JEN
 
 ## Motivation for selecting this project
 
-Jenkins is apart of a newer software trend for automating workflows, builds, and testing.  This trend is evident in the increasing number of companies that heavily rely on Jenkins as a cornerstone in their software development process (see Use/Popularity).  
-
-Such automated processes vastly aids in the development process.  Yet, these automated processes are complex, large, and comprise many interacting systems.  Such large interacting process are possibly more apt to produce bugs due to the many lines of code and the intricacies of interleaved systems. Such vulnerabilities are evident in the vulnerability history of Jenkins.  Its security record contains numerous recent entries, leading our group to believe there may be more bugs our group might uncover.  
+The use of Jenkins-like software is a growing trending for many software engineers.  Such projects are deeply integrated within the development process.  This makes Jenkins a prime candidate for our group to learn from and interact within.  Jenkins is also a colossal code base with a recent history of bugs.  It seems likely that our group will be able to identify security vulnerabilities and push fixes or suggestions to the project.
 
 ## Team Links
 
