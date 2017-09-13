@@ -18,6 +18,8 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+# **Open source project description**
+
 ### Group Member Names
 * Larry Singleton
 
@@ -26,8 +28,6 @@
 * Daniel Ritter
 
 * James Percival
-
-# **Open source project description**
 
 ## What is it?
 ### Overview
