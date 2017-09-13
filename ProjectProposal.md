@@ -84,6 +84,11 @@ The Jenkins core is under the [MIT license](https://opensource.org/licenses/MIT)
 
 The options for participating and making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page. A beginner’s guide for new contributors can be found on their [wiki](https://wiki.jenkins.io/display/JENKINS/Beginners+Guide+to+Contributing).
 
+In summary, Jenkins is an open community and encourages newcomers to make contributions.  Jenkins even encourages newcomers to join their bi-weekly project meetings on IRC.
+
+From their website, "Want to get more involved and commit directly to the repository? Just ask! We generally give away the push access very liberally. This process hasn't been fully automated yet, but the intention is that you just need to ask to get the push access."
+
+Given the provided links and website content, our group feels confident in our ability to cnotribute to the project during the course of this semester.
 ## Contributor agreements
 As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests."
 * https://jenkins.io/participate/
