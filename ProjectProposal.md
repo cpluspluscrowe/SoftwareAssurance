@@ -1,6 +1,7 @@
 ![](assets/markdown-img-paste-20170909112804883.png)
 
 - [**Open source project description**](#--open-source-project-description--)
+  * [Group Member Names](#group-member-names)
   * [What is it?](#what-is-it-)
   * [Activity](#activity)
   * [Use](#use)
