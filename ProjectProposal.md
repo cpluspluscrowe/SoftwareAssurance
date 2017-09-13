@@ -20,7 +20,7 @@
 
 
 # **Open source project description**
- 
+
 ## What is it?
 ### Overview
  Jenkins is a better way to test and deploy software.  It performs these tasks by automating much of the process.  This automation is setup via Jenkins helpful UIs that visualize building, testing, and deploying your software.  Upon setup, Jenkins serves as an invaluable quality control tool, allowing users to automatically monitor their repositories, build software, and run relevant tests.
@@ -82,14 +82,14 @@ The Jenkins core is under the [MIT license](https://opensource.org/licenses/MIT)
 
 ## Procedures for making contributions
 
-The options for participating and making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page. A beginner’s guide for new contributors can be found on their [wiki](https://wiki.jenkins.io/display/JENKINS/Beginners+Guide+to+Contributing). 
+The options for participating and making contributions to the Jenkins project are well defined at their [participate](https://jenkins.io/participate/) page. A beginner’s guide for new contributors can be found on their [wiki](https://wiki.jenkins.io/display/JENKINS/Beginners+Guide+to+Contributing).
 
 ## Contributor agreements
 As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests."
 * https://jenkins.io/participate/
 
 Committers must sign a contributor’s license agreement (CLA). This provides certain rights to contributors, such as the right to contribute, copyright ownership, and a patent grant. If a company is placing an employee on the project, the company must sign a Corporate CLA.
-	
+
 ## Security related history
 
 And while the codebase is considered well established and mature, its history contains more than a few vulnerabilities.  Many of these vulnerabilities can be traced to its rapid development, huge codebase, and possibly superfluous plugins. One of the more recent, severe examples was a remote code injection vulnerability affecting the entire Jenkins community earlier this year. Bugs like these can really hurt a community if not handled well because both people and companies can start to not trust the software.
@@ -104,9 +104,11 @@ And while the codebase is considered well established and mature, its history co
 
 Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) to aid in project configuration. Additional project security concerns are kept in the [project board](https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2).
 
+Our group brainstormed [functional security requirements for Jenkins](https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2) during the selection process to ensure Jenkins would be a good choice.
+
 ## Motivation for selecting this project
 
-Jenkins is a very interesting project that a good number of major companies now rely on for their continuous integration and deploying capabilities. Once any company puts in architecture which changes their workflow and more importantly, builds and deploys their code, they need to worry about security. With as many security bugs as has been found very recently, it appears the more eyes on the software the better. 
+Jenkins is a very interesting project that a good number of major companies now rely on for their continuous integration and deploying capabilities. Once any company puts in architecture which changes their workflow and more importantly, builds and deploys their code, they need to worry about security. With as many security bugs as has been found very recently, it appears the more eyes on the software the better.
 
 ## Team Links
 
