@@ -86,9 +86,7 @@ The options for participating and making contributions to the Jenkins project ar
 
 In summary, Jenkins is an open community and encourages newcomers to make contributions.  Jenkins even encourages newcomers to join their bi-weekly project meetings on IRC.
 
-From their website, "Want to get more involved and commit directly to the repository? Just ask! We generally give away the push access very liberally. This process hasn't been fully automated yet, but the intention is that you just need to ask to get the push access."
-
-Given the provided links and website content, our group feels confident in our ability to cnotribute to the project during the course of this semester.
+From their website, "Want to get more involved and commit directly to the repository? Just ask! We generally give away the push access very liberally. This process hasn't been fully automated yet, but the intention is that you just need to ask to get the push access."  Given the provided links and website content, our group feels confident in our ability to cnotribute to the project during the course of this semester.
 ## Contributor agreements
 As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests."
 * https://jenkins.io/participate/
@@ -107,9 +105,7 @@ And while the codebase is considered well established and mature, its history co
 
 ## Functional security requirements for the software
 
-Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) to aid in project configuration. Additional project security concerns are kept in the [project board](https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2).
-
-Our group brainstormed [functional security requirements for Jenkins](https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2) during the selection process to ensure Jenkins would be a good choice.
+Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) to aid in project configuration. Our group brainstormed [functional security requirements for Jenkins](https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2) during the selection process to ensure Jenkins would be a good choice.
 
 ## Motivation for selecting this project
 
