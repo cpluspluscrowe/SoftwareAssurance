@@ -2,7 +2,7 @@
 
 - [**Open source project description**](#--open-source-project-description--)
   * [Group Member Names](#group-member-names)
-  * [What is it?](#what-is-it-)
+  * [What is it?](#what-is-it)
   * [Activity](#activity)
   * [Use](#use)
   * [Popularity](#popularity)
