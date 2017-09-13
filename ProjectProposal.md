@@ -17,7 +17,14 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+### Group Member Names
+* Larry Singleton
 
+* Chad Crowe
+
+* Daniel Ritter
+
+* James Percival
 
 # **Open source project description**
 
