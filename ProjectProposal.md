@@ -123,6 +123,9 @@ Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JEN
 
 * Jenkins should be able to protect Jenkins master from malicious builds - Anyone running Jenkins from the master node can make malicious changes to the project. This may allow undesired Jenkins activity, and potentially malicious changes across an entire organization. 
 
+* Jenkins should allow users to share markdown and html without allowing malicious scripts to run - Scripts unintentionally running is almost always a security risk. Users should be able to access the files they need without fear of running scripts unintentionally.
+ 
+
 ## Motivation for selecting this project
 
 The use of Jenkins-like software is a growing trending for many software engineers.  Such projects are deeply integrated within the software development process (often Agile).  This makes Jenkins a prime candidate for our group to learn from and interact within.  Jenkins is also a colossal code base with a recent history of bugs.  It seems likely that our group will be able to identify security vulnerabilities and push fixes or suggestions to the project. Many in our group are new to software security and look forward to applying newly learned methods of software security engineering to a large project.   
