@@ -115,6 +115,11 @@ And while the codebase is considered well established and mature, its history co
 
 Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) to aid in project configuration. Our group brainstormed [functional security requirements for Jenkins](https://github.com/cpluspluscrowe/SoftwareAssurance/projects/2) during the selection process to ensure Jenkins would be a good choice.
 
+* CSRF Mitigations - Since Jenkins is used through a web interface. Proper precautions should be taken to prevent malicious websites from taking actions on the users behalf. 
+
+* User Authentication - Jenkins can contain sensitive information and allow access to critical systems. Proper authentication mechanisms should be in place to prevent unauthorized actions. 
+
+
 ## Motivation for selecting this project
 
 The use of Jenkins-like software is a growing trending for many software engineers.  Such projects are deeply integrated within the software development process (often Agile).  This makes Jenkins a prime candidate for our group to learn from and interact within.  Jenkins is also a colossal code base with a recent history of bugs.  It seems likely that our group will be able to identify security vulnerabilities and push fixes or suggestions to the project. Many in our group are new to software security and look forward to applying newly learned methods of software security engineering to a large project.   
