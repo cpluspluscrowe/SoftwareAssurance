@@ -119,6 +119,9 @@ Jenkins provides a [Standard Security Setup](https://wiki.jenkins.io/display/JEN
 
 * User Authentication - Jenkins can contain sensitive information and allow access to critical systems. Proper authentication mechanisms should be in place to prevent unauthorized actions. 
 
+* Jenkins should not allow deployment of malicious builds - Jenkins needs to be able to detect malicious and vulnerable code. If either of these issues are detected, automatic deployment should not be completed.
+
+* Jenkins should be able to protect Jenkins master from malicious builds - Anyone running Jenkins from the master node can make malicious changes to the project. This may allow undesired Jenkins activity, and potentially malicious changes across an entire organization. 
 
 ## Motivation for selecting this project
 
