@@ -86,7 +86,7 @@ The [Jenkins Documentation Home Page](https://jenkins.io/doc/) provides a great 
 
 ## License
 
-The Jenkins core is under the [MIT license](https://opensource.org/licenses/MIT), so its software can be used publically or privately, as long as the copyright notice is included in all copies or substantial portions of the software.  This assumes that the client must publically disclose that they've utilized Jenkins within their software project.
+The Jenkins core is under the [MIT license](https://opensource.org/licenses/MIT), so its software can be used publicly or privately, as long as the copyright notice is included in all copies or substantial portions of the software.  This assumes that the client must publicly disclose that they've utilized Jenkins within their software project.
 
 ## Procedures for making contributions
 
@@ -94,9 +94,9 @@ The options for participating and making contributions to the Jenkins project ar
 
 In summary, Jenkins is an open community and encourages newcomers to make contributions.  Jenkins even encourages newcomers to join their bi-weekly project meetings on IRC.
 
-From their website, "Want to get more involved and commit directly to the repository? Just ask! We generally give away the push access very liberally. This process hasn't been fully automated yet, but the intention is that you just need to ask to get the push access."  Given the provided links and website content, our group feels confident in our ability to cnotribute to the project during the course of this semester.
+From their website, "Want to get more involved and commit directly to the repository? Just ask! We generally give away the push access very liberally. This process hasn't been fully automated yet, but the intention is that you just need to ask to get the push access."  Given the provided links and website content, our group feels confident in our ability to contribute to the project during the course of this semester.
 ## Contributor agreements
-As a contributor, "you activiely help improve Jenkins and plugins by contributing code, documentation, translations, or tests."
+As a contributor, "you actively help improve Jenkins and plugins by contributing code, documentation, translations, or tests."
 * https://jenkins.io/participate/
 
 Committers must sign a contributor’s license agreement (CLA). This provides certain rights to contributors, such as the right to contribute, copyright ownership, and a patent grant. If a company is placing an employee on the project, the company must sign a Corporate CLA.
