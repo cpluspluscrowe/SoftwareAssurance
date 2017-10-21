@@ -1,15 +1,25 @@
 ![](assets/markdown-img-paste-20170909112804883.png)
 
+- [- **Requirements for Software Security Engineering**](#----requirements-for-software-security-engineering--)
+  * [Security Requirement Claim 1](#security-requirement-claim-1)
+      - [(Larry Singleton)](#-larry-singleton-)
+  * [Security Requirement Claim 2](#security-requirement-claim-2)
+      - [(Chad Crowe)](#-chad-crowe-)
+  * [Security Requirement Claim 3](#security-requirement-claim-3)
+      - [(Dan R)](#-dan-r-)
+  * [Security Requirement Claim 4](#security-requirement-claim-4)
+      - [(James P)](#-james-p-)
+  * [Security Requirement Claim 5](#security-requirement-claim-5)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+
 # - **Requirements for Software Security Engineering**
-  * [Security Requirement Claim 1](#Security-Requirement-Claim-1)
-  * [Security Requirement Claim 2](#Security-Requirement-Claim-2)
-  * [Security Requirement Claim 3](#Security-Requirement-Claim-3)
-  * [Security Requirement Claim 4](#Security-Requirement-Claim-4)
-  * [Security Requirement Claim 4](#Security-Requirement-Claim-5)
 
-### Security Requirement Claim 1
+## Security Requirement Claim 1
 
-### (Larry Singleton)
+#### (Larry Singleton)
 
 Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
 ![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 1 &4.png) 
@@ -26,7 +36,7 @@ Part 5: Review OSS project documentation for security related configuration and 
 
 Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
-### Security Requirement Claim 2
+## Security Requirement Claim 2
 
 #### (Chad Crowe)
 
@@ -45,7 +55,7 @@ Part 5: Review OSS project documentation for security related configuration and 
 
 Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/1)
 
-### Security Requirement Claim 3
+## Security Requirement Claim 3
 
 #### (Dan R)
 
@@ -64,7 +74,7 @@ Part 5: Review OSS project documentation for security related configuration and 
 
 Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/2)
 
-### Security Requirement Claim 4 
+## Security Requirement Claim 4 
 #### (James P)
 
 Jenkins adquately filters user input to prevent reflected XSS
@@ -82,8 +92,8 @@ Part 5: Review OSS project documentation for security related configuration and 
 
 Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
-#### Security Requirement Claim 5 
-### (all)
+## Security Requirement Claim 5 
+#### (all)
 
 Jenkins adquately secures files to prevent unauthorized file accesses
 ![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 5.png) 
