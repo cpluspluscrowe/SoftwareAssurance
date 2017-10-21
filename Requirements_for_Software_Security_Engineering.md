@@ -34,7 +34,7 @@ Part 4: Summarize your observations
 
 Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
 ## Security Requirement Claim 2
 
@@ -53,7 +53,7 @@ Part 4: Summarize your observations
 
 Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/1)
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/1)
 
 ## Security Requirement Claim 3
 
@@ -72,7 +72,7 @@ Part 4: Summarize your observations
 
 Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/2)
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/2)
 
 ## Security Requirement Claim 4 
 #### (James P)
@@ -90,7 +90,7 @@ Part 4: Summarize your observations
 
 Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
 ## Security Requirement Claim 5 
 #### (all)
@@ -108,5 +108,5 @@ Part 4: Summarize your observations
 
 Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/3)
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/3)
 
