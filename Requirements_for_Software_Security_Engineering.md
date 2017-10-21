@@ -20,12 +20,13 @@
 
 #### (Larry Singleton)
 
-Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
-![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 1 &4.png) 
+Part 1: Assurance Claim:
 
-Part 1: List of final assurance claims
+Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks 
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+
+![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 1 &4.png)
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
@@ -39,12 +40,13 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 
 #### (Chad Crowe)
 
-Jenkins software provides sufficient support (out of the box) to adequately isolate the master node from unwanted access and malicious scripts 
-![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 2.png) 
+Part 1: Assurance Claim:
 
-Part 1: List of final assurance claims
+Jenkins software provides sufficient support (out of the box) to adequately isolate the master node from unwanted access and malicious scripts 
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+
+![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 2.png) 
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
@@ -58,12 +60,13 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 
 #### (Dan R)
 
-Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
-![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 3.png) 
+Part 1: Assurance Claim:
 
-Part 1: List of final assurance claims
+Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+
+![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 3.png) 
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
@@ -76,12 +79,13 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 ## Security Requirement Claim 4 
 #### (James P)
 
-Jenkins adquately filters user input to prevent reflected XSS
-![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 1 &4.png) 
+Part 1: Assurance Claim:
 
-Part 1: List of final assurance claims
+Jenkins adquately filters user input to prevent reflected XSS 
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+
+![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 1 &4.png)
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
@@ -94,12 +98,13 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 ## Security Requirement Claim 5 
 #### (all)
 
-Jenkins adquately secures files to prevent unauthorized file accesses
-![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 5.png) 
+Part 1: Assurance Claim:
 
-Part 1: List of final assurance claims
+Jenkins adquately secures files to prevent unauthorized file accesses
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+
+![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 5.png) 
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
