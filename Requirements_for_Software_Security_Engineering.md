@@ -26,7 +26,7 @@ Jenkins provides an acceptable level of protection from Cross Site Request Forge
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-![](assets/JAX Misuse Diagrams - Claim 1 &4.png)
+![](assets/JAX_Misuse_Diagrams1And4.png)
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
@@ -46,7 +46,7 @@ Jenkins software provides sufficient support (out of the box) to adequately isol
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-![](assets/JAX Misuse Diagrams - Claim 2.png) 
+![](assets/JAX_Misuse_Diagrams2.png) 
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
@@ -66,7 +66,7 @@ Jenkins authentication mechanisms are sufficient to prevent malicious users from
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-![](assets/JAX Misuse Diagrams - Claim 3.png) 
+![](assets/JAX_Misuse_Diagrams3.png) 
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
@@ -85,7 +85,7 @@ Jenkins adquately filters user input to prevent reflected XSS
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-![](assets/JAX Misuse Diagrams - Claim 1 &4.png)
+![](assets/JAX_Misuse_Diagrams1And4.png)
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
@@ -104,7 +104,7 @@ Jenkins adquately secures files to prevent unauthorized file accesses
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-![](assets/JAX Misuse Diagrams - Claim 5.png) 
+![](assets/JAX_Misuse_Diagrams5.png) 
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
