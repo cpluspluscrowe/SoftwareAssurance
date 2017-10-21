@@ -9,7 +9,7 @@
 
 ### Security Requirement Claim 1
 
-###(Larry Singleton)
+### (Larry Singleton)
 
 Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
 ![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 1 &4.png) 
@@ -26,9 +26,9 @@ Part 5: Review OSS project documentation for security related configuration and 
 
 Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
-###Security Requirement Claim 2
+### Security Requirement Claim 2
 
-####(Chad Crowe)
+#### (Chad Crowe)
 
 Jenkins software provides sufficient support (out of the box) to adequately isolate the master node from unwanted access and malicious scripts 
 ![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 2.png) 
@@ -45,9 +45,9 @@ Part 5: Review OSS project documentation for security related configuration and 
 
 Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/1)
 
-###Security Requirement Claim 3
+### Security Requirement Claim 3
 
-####(Dan R)
+#### (Dan R)
 
 Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
 ![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 3.png) 
@@ -64,8 +64,8 @@ Part 5: Review OSS project documentation for security related configuration and 
 
 Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/2)
 
-###Security Requirement Claim 4 
-####(James P)
+### Security Requirement Claim 4 
+#### (James P)
 
 Jenkins adquately filters user input to prevent reflected XSS
 ![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 1 &4.png) 
@@ -82,8 +82,8 @@ Part 5: Review OSS project documentation for security related configuration and 
 
 Include links to Lucidchart mis-use cases.  [Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
-####Security Requirement Claim 5 
-###(all)
+#### Security Requirement Claim 5 
+### (all)
 
 Jenkins adquately secures files to prevent unauthorized file accesses
 ![start_caQtDM_7id.sh](./JAX Misuse Diagrams - Claim 5.png) 
