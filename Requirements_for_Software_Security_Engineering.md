@@ -2,25 +2,25 @@
 
 - [**Requirements for Software Security Engineering**](#--requirements-for-software-security-engineering--)
   * [Security Requirement Claim 1 and 4](#security-requirement-claim-1-and-4)
-    + [Part 1: Assurance Claims](#part-1--assurance-claims)
-    + [Part 2: Review OSS project documentation for alignment of security requirements with advertised features.](#part-2--review-oss-project-documentation-for-alignment-of-security-requirements-with-advertised-features)
-    + [Part 3: Summarize your observations](#part-3--summarize-your-observations)
-    + [Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.](#part-4--review-oss-project-documentation-for-security-related-configuration-and-installation-issues-summarize-your-observations)
+    + [Part 1](#part-1)
+    + [Part 2](#part-2)
+    + [Part 3](#part-3)
+    + [Part 4](#part-4)
   * [Security Requirement Claim 2](#security-requirement-claim-2)
-    + [Part 1: Assurance Claim:](#part-1--assurance-claim-)
-    + [Part 2: Review OSS project documentation for alignment of security requirements with advertised features.](#part-2--review-oss-project-documentation-for-alignment-of-security-requirements-with-advertised-features-1)
-    + [Part 3: Summarize your observations](#part-3--summarize-your-observations-1)
-    + [Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.](#part-4--review-oss-project-documentation-for-security-related-configuration-and-installation-issues-summarize-your-observations-1)
+    + [Part 1](#part-1-1)
+    + [Part 2](#part-2-1)
+    + [Part 3](#part-3-1)
+    + [Part 4](#part-4-1)
   * [Security Requirement Claim 3](#security-requirement-claim-3)
-    + [Part 1: Assurance Claim:](#part-1--assurance-claim--1)
-    + [Part 2: Review OSS project documentation for alignment of security requirements with advertised features.](#part-2--review-oss-project-documentation-for-alignment-of-security-requirements-with-advertised-features-2)
-    + [Part 3: Summarize your observations](#part-3--summarize-your-observations-2)
-    + [Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.](#part-4--review-oss-project-documentation-for-security-related-configuration-and-installation-issues-summarize-your-observations-2)
+    + [Part 1](#part-1-2)
+    + [Part 2](#part-2-2)
+    + [Part 3](#part-3-2)
+    + [Part 4](#part-4-2)
   * [Security Requirement Claim 5](#security-requirement-claim-5)
-    + [Part 1: Assurance Claim:](#part-1--assurance-claim--2)
-    + [Part 2: Review OSS project documentation for alignment of security requirements with advertised features.](#part-2--review-oss-project-documentation-for-alignment-of-security-requirements-with-advertised-features-3)
-    + [Part 3: Summarize your observations](#part-3--summarize-your-observations-3)
-    + [Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.](#part-4--review-oss-project-documentation-for-security-related-configuration-and-installation-issues-summarize-your-observations-3)
+    + [Part 1](#part-1-3)
+    + [Part 2](#part-2-3)
+    + [Part 3](#part-3-3)
+    + [Part 4](#part-4-3)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -31,26 +31,32 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 ## Security Requirement Claim 1 and 4 
 * Larry S and James P
 
-### Part 1: Assurance Claims
+### Part 1 
+> Assurance Claims
 * Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
 * Jenkins adquately filters user input to prevent reflected XSS 
 
-### Part 2: Review OSS project documentation for alignment of security requirements with advertised features. 
+### Part 2 
+> Review OSS project documentation for alignment of security requirements with advertised features
 
-### Part 3: Summarize your observations
+### Part 3 
+> Summarize your observations
 
-### Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+### Part 4 
+> Review OSS project documentation for security related configuration and installation issues. Summarize your observations
 
 
 
 ## Security Requirement Claim 2
 * Chad Crowe
 
-### Part 1: Assurance Claim:
+### Part 1 
+> Assurance Claim
 
 * Jenkins software provides sufficient support (out of the box) to adequately isolate the master node from unwanted access and malicious scripts 
 
-### Part 2: Review OSS project documentation for alignment of security requirements with advertised features.
+### Part 2 
+> Review OSS project documentation for alignment of security requirements with advertised features
 
 From the OSS website, "Historically, Jenkins master and slaves behaved as if they altogether form a single distributed process. This means a slave can ask a master to do just about anything within the confinement of the operating system, such as accessing files on the master or trigger other jobs on Jenkins.
 This has increasingly become problematic, as larger enterprise deployments have developed more sophisticated trust separation model, where the administators of a master might take slaves owned by other teams. In such an environment, slaves are less trusted than the master."
@@ -132,13 +138,15 @@ File access rules: See above for what this field means.
 
 Whitelisting a command requires not only verifying that the command is intended to be used in this direction, but also that the command implementation is not exploitable by malicious slaves. This requires careful analysis of the source code, taking such things into account as all possible serializable fields.
 
-### Part 3: Summarize your observations
+### Part 3 
+> Summarize your observations
 
 To avoid getting affected by file access rules, have the master work on files of a slave, instead of the other way around.
 
 So when a slave requests a master to execute a command and if it is not classified explicitly as intended for slave → master, Jenkins will err on the side of caution and refuses to execute the command.
 
-### Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+### Part 4 
+> Review OSS project documentation for security related configuration and installation issues. Summarize your observations
 
 * plugin issues
 
@@ -149,27 +157,36 @@ The easiest way to fix this is by extending from MasterToSlaveCallable, to indic
 ## Security Requirement Claim 3
 * Dan R
 
-### Part 1: Assurance Claim:
+### Part 1
+> Assurance Claim
 
 * Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
 
-### Part 2: Review OSS project documentation for alignment of security requirements with advertised features. 
+### Part 2
+> Review OSS project documentation for alignment of security requirements with advertised features. 
 
-### Part 3: Summarize your observations
+### Part 3
+> Summarize your observations
 
-### Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+### Part 4
+> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+
+
 
 ## Security Requirement Claim 5 
 * all
 
-
-### Part 1: Assurance Claim:
+### Part 1
+> Assurance Claim
 
 * Jenkins adequately secures files to prevent unauthorized file accesses
 
-### Part 2: Review OSS project documentation for alignment of security requirements with advertised features. 
+### Part 2
+> Review OSS project documentation for alignment of security requirements with advertised features. 
 
-### Part 3: Summarize your observations
+### Part 3
+> Summarize your observations
 
-### Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+### Part 4
+> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
