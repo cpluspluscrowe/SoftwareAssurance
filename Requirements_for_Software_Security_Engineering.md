@@ -62,7 +62,7 @@ Link to Team Lucidchart mis-use cases updated with feedback from assignment:
 > Review OSS project documentation for alignment of security requirements with advertised features
 
 From the OSS website, "Historically, Jenkins master and slaves behaved as if they altogether form a single distributed process. This means a slave can ask a master to do just about anything within the confinement of the operating system, such as accessing files on the master or trigger other jobs on Jenkins.
-This has increasingly become problematic, as larger enterprise deployments have developed more sophisticated trust separation model, where the administators of a master might take slaves owned by other teams. In such an environment, slaves are less trusted than the master."
+This has increasingly become problematic, as larger enterprise deployments have developed more sophisticated trust separation model, where the administrators of a master might take slaves owned by other teams. In such an environment, slaves are less trusted than the master."
 
 "Starting 1.587 (and 1.580.1), Jenkins added a subsystem to put a wall between a master and a slave to safely allow less trusted slaves to be connected to a master."
 
