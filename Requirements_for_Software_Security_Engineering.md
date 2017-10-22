@@ -1,82 +1,69 @@
 ![](assets/markdown-img-paste-20170909112804883.png)
 
-- [**Requirements for Software Security Engineering**](#--requirements-for-software-security-engineering--)
-  * [Security Requirement Claim 1 and 4](#security-requirement-claim-1-and-4)
-    + [Part 1](#part-1)
-    + [Part 2](#part-2)
-    + [Part 3](#part-3)
-    + [Part 4](#part-4)
+- [- **Requirements for Software Security Engineering**](#----requirements-for-software-security-engineering--)
+  * [Security Requirement Claim 1](#security-requirement-claim-1)
+      - [(Larry Singleton)](#-larry-singleton-)
   * [Security Requirement Claim 2](#security-requirement-claim-2)
-    + [Part 1](#part-1-1)
-    + [Part 2](#part-2-1)
-    + [Part 3](#part-3-1)
-    + [Part 4](#part-4-1)
+      - [(Chad Crowe)](#-chad-crowe-)
   * [Security Requirement Claim 3](#security-requirement-claim-3)
-    + [Part 1](#part-1-2)
-    + [Part 2](#part-2-2)
-    + [Part 3](#part-3-2)
-    + [Part 4](#part-4-2)
+      - [(Dan R)](#-dan-r-)
+  * [Security Requirement Claim 4](#security-requirement-claim-4)
+      - [(James P)](#-james-p-)
   * [Security Requirement Claim 5](#security-requirement-claim-5)
-    + [Part 1](#part-1-3)
-    + [Part 2](#part-2-3)
-    + [Part 3](#part-3-3)
-    + [Part 4](#part-4-3)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-# **Requirements for Software Security Engineering**
 
-Link to Team Lucidchart mis-use cases updated with feedback from assignment:  
-* [JAX Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
+# - **Requirements for Software Security Engineering**
 
+## Security Requirement Claim 1
 
-<!-------------------------------------------------------------------------------------------------------------------->
-## Security Requirement Claim 1 and 4 
-* Larry S and James P
+#### (Larry Singleton)
 
-### Part 1 
-> Assurance Claims
-* Claim 1: Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
-* Claim 4: Jenkins adequately filters user input to prevent reflected XSS 
+Part 1: Assurance Claim:
 
-### Part 2 
-> Review OSS project documentation for alignment of security requirements with advertised features
+Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks 
 
-### Part 3 
-> Summarize your observations
+Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-### Part 4 
-> Review OSS project documentation for security related configuration and installation issues. Summarize your observations
+![](assets/JAX_Misuse_Diagrams1And4.png)
 
+Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
-<!-------------------------------------------------------------------------------------------------------------------->
+Part 4: Summarize your observations
+
+Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
+
 ## Security Requirement Claim 2
-* Chad Crowe
 
-### Part 1 
-> Assurance Claim
+#### (Chad Crowe)
 
-* Jenkins software provides sufficient support (out of the box) to adequately isolate the master node from unwanted access and malicious scripts 
+Part 1: Assurance Claim:
 
-### Part 2 
-> Review OSS project documentation for alignment of security requirements with advertised features
+Jenkins software provides sufficient support (out of the box) to adequately isolate the master node from unwanted access and malicious scripts 
 
-From the OSS website, "Historically, Jenkins master and slaves behaved as if they altogether form a single distributed process. This means a slave can ask a master to do just about anything within the confinement of the operating system, such as accessing files on the master or trigger other jobs on Jenkins.
-This has increasingly become problematic, as larger enterprise deployments have developed more sophisticated trust separation model, where the administrators of a master might take slaves owned by other teams. In such an environment, slaves are less trusted than the master."
+Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-"Starting 1.587 (and 1.580.1), Jenkins added a subsystem to put a wall between a master and a slave to safely allow less trusted slaves to be connected to a master."
+![](assets/JAX_Misuse_Diagrams2.png) 
 
-"This subsystem is turned off by default for backward compatibility, but if you fit the "larger enterprise deployment" description above, then we highly recommend you turn this mode on. "
+Part 3: Review OSS project documentation for alignment of security requirements with advertised features.
 
-Example of when I would want this security feature enabled: "You have some jobs that are configured to run on a specific slave because it is sensitive"
+Jenkin's nodes behave as a single distributed process.  As a consequence, the slave and master both perform similar and widely-varying processes, e.g. accessing files and triggering jobs.  This works within smaller projects.  Larger models require a more administration, i.e. a separation of trust. In these cases, the master is controlled by an administrator and slaves are designted to teams.  This designates the master as more trustworthy than any slave.
 
-Security Exceptions Jenkins throws for this feature:
+There are multiple reasons for enabling this feature.  Consider the scenario where sensative information needs is running on the master.  Without such a separation, malicious slaves might access this information. 
 
-    java.lang.SecurityException: slave may not create /var/lib/jenkins/foo/.bar/...
+Jenkins even throws security exceptions to prevent undesireable node/information access.   
+
+    java.lang.SecurityException: slave may not create file on the master
     See http://jenkins-ci.org/security-144 for more details
 
     java.lang.SecurityException: Sending org.jenkinsci.plugins.gitclient.CliGitAPIImpl$GetPrivateKeys from slave to master is prohibited.
     See http://jenkins-ci.org/security-144 for more details
+
+As of version 1.587 Jenkins has added an optional security wall between the master and slaves.  Unfortunately, the subsystem is turned off by default (for backward compatibility).  
+
     
 There are three ways to enable this security setting.  
 
@@ -141,59 +128,77 @@ File access rules: See above for what this field means.
 
 Whitelisting a command requires not only verifying that the command is intended to be used in this direction, but also that the command implementation is not exploitable by malicious slaves. This requires careful analysis of the source code, taking such things into account as all possible serializable fields.
 
-### Part 3 
-> Summarize your observations
+Part 4: Summarize your observations
 
 To avoid getting affected by file access rules, have the master work on files of a slave, instead of the other way around.
 
 So when a slave requests a master to execute a command and if it is not classified explicitly as intended for slave → master, Jenkins will err on the side of caution and refuses to execute the command.
 
-### Part 4 
-> Review OSS project documentation for security related configuration and installation issues. Summarize your observations
+Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-* plugin issues
+plugin issues:
 
 For the access control to work without requiring manual intervention by users, plugins need to classify their Callable and FileCallable objects whether they are meant to be run on a master or on a slave.
-For this purpose, the remote library has added the RoleSensitive interface that has a new checkRoles() method. Callable, FileCallable, and other similar interfaces now extend from this interface. So if you are directly implementing Callable, you will get an error saying that you have unimplemented abstract methods.
+For this purpose, the remoting library has added the RoleSensitive interface that has a new checkRoles() method. Callable, FileCallable, and other similar interfaces now extend from this interface. So if you are directly implementing Callable, you will get an error saying that you have unimplemented abstract methods.
 The easiest way to fix this is by extending from MasterToSlaveCallable, to indicate that your Callable is only meant to be sent from a master to a slave, or SlaveToMasterCallable, to indicate that your Callable is meant to be sent from a slave to a master. Note that SlaveToMasterCallable can still be executed on a slave, as slaves do not perform this access control check. FileCallable similarly has MasterToSlaveFileCallable and SlaveToMasterFileCallable.
 
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/1)
 
-
-<!-------------------------------------------------------------------------------------------------------------------->
 ## Security Requirement Claim 3
-* Dan R
 
-### Part 1
-> Assurance Claim
+#### (Dan R)
 
-* Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
+Part 1: Assurance Claim:
 
-### Part 2
-> Review OSS project documentation for alignment of security requirements with advertised features. 
+Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
 
-### Part 3
-> Summarize your observations
+Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-### Part 4
-> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+![](assets/JAX_Misuse_Diagrams3.png) 
 
+Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
+Part 4: Summarize your observations
 
-<!-------------------------------------------------------------------------------------------------------------------->
+Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/2)
+
+## Security Requirement Claim 4 
+#### (James P)
+
+Part 1: Assurance Claim:
+
+Jenkins adquately filters user input to prevent reflected XSS 
+
+Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+
+![](assets/JAX_Misuse_Diagrams1And4.png)
+
+Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
+
+Part 4: Summarize your observations
+
+Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
+
 ## Security Requirement Claim 5 
-* all
+#### (all)
 
-### Part 1
-> Assurance Claim
+Part 1: Assurance Claim:
 
-* Jenkins adequately secures files to prevent unauthorized file accesses
+Jenkins adquately secures files to prevent unauthorized file accesses
 
-### Part 2
-> Review OSS project documentation for alignment of security requirements with advertised features. 
+Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
-### Part 3
-> Summarize your observations
+![](assets/JAX_Misuse_Diagrams5.png) 
 
-### Part 4
-> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
+
+Part 4: Summarize your observations
+
+Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/3)
 
