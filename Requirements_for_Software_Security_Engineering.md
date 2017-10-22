@@ -40,15 +40,15 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 
 #### (Chad Crowe)
 
-Part 1: Assurance Claim:
+####Part 1: Assurance Claim:
 
-Jenkins software provides sufficient support (out of the box) to adequately isolate the master node from unwanted access and malicious scripts 
+Jenkins software provides sufficient support to adequately isolate the master node from malicious code or file access.
 
-Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+####Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
 ![](assets/JAX_Misuse_Diagrams2.png) 
 
-Part 3: Review OSS project documentation for alignment of security requirements with advertised features.
+####Part 3: Review OSS project documentation for alignment of security requirements with advertised features.
 
 Jenkin's nodes behave as a single distributed process.  As a consequence, the slave and master both perform similar and widely-varying processes, e.g. accessing files and triggering jobs.  This works within smaller projects.  Larger models require a more administration, i.e. a separation of trust. In these cases, the master is controlled by an administrator and slaves are designated to teams.  This designates the master as more trustworthy than any slave.  In Jenkins, this is a feature that can be enabled.
 
@@ -105,9 +105,8 @@ Callable that delegates execution to deserialized object is dangerous and needs 
 	}
 To avoid such hassles, one may rewrite code to not call back to a master from a slave. Instead, supply the slave with all the data it needs so no callbacks are necessary. This hierarchy of calling from master -> slave may not always be possible/practical, but it's much more secure.
 
-Jenkins allows for command whitelisting to guarantee only certain commands are run on its nodes.  One can also specify currently rejected commands.  Whitelisting still requires a lot of verification that such a command it not exploitable by malicious slaves.  This requires careful analysis of what source code is being run by such commands.  One must also take into account all possible serialization fields (which the slave controls in slave -> master execution).  
 
-Part 4: Summarize your observations
+####Part 4: Summarize your observations
 
 Slave -> master code access/execution provides many opportunities for exploitation. Security must be set to prevent any slave -> master file access or code execution. It is best to give the slave no permissions on the master. 
 
@@ -115,14 +114,15 @@ Jenkins provides a security feature which prevents slave -> master file access/c
 
 Jenkins provides node-to-node permissions at the file granularity.  This can be used to secure sensitive information and prevent malicious local file execution.
 
+####Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+As a part of configuration, Jenkins lets user specify file access rules.  These rules are specified via tuples for read, write, creating directories/files, deleting directories/files, and retrieving node stats. These rules are then applied to files.  Regular expressions are used to map each rule to certain files. 
 
-plugin issues:
+There are many possibilities of exploitation due to file access rules.  If files are later added/renamed and file access rules are not kept up-to-date, then malicious users may gain access/control over these files.  Also, if the user is unfamiliar with regex expressions, they might misconfigure file access rules.  Each of these cases can aid malicious users in exploiting the system.
 
-For the access control to work without requiring manual intervention by users, plugins need to classify their Callable and FileCallable objects whether they are meant to be run on a master or on a slave.
-For this purpose, the remoting library has added the RoleSensitive interface that has a new checkRoles() method. Callable, FileCallable, and other similar interfaces now extend from this interface. So if you are directly implementing Callable, you will get an error saying that you have unimplemented abstract methods.
-The easiest way to fix this is by extending from MasterToSlaveCallable, to indicate that your Callable is only meant to be sent from a master to a slave, or SlaveToMasterCallable, to indicate that your Callable is meant to be sent from a slave to a master. Note that SlaveToMasterCallable can still be executed on a slave, as slaves do not perform this access control check. FileCallable similarly has MasterToSlaveFileCallable and SlaveToMasterFileCallable.
+Jenkins allows for command whitelisting to guarantee only certain commands are run on its nodes.  One can also specify currently rejected commands.  Whitelisting still requires a lot of verification that such a command it not exploitable by malicious slaves.  This requires careful analysis of what source code is being run by such commands.  One must also take into account all possible serialization fields (which the slave controls in slave -> master execution).  
+
+Plugins also need to be configured for security.  Plugins also need to classify their methods and whether they are meant to be run on a master or on a slave.  For this purpose, the remoting library has added the interfaces to control master method access.  There is also an extendible class to guarantee only master -> slave execution (called MasterToSlaveCallable).  The FileCallable is similar and only enables master -> slave file access.  These classes and wrappers help prevent the mis-use of accessible master-code by malicious slaves.
 
 Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/1)
 
