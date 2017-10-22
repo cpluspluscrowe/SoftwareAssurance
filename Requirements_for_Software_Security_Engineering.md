@@ -39,13 +39,11 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 * Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
 * Jenkins adquately filters user input to prevent reflected XSS 
 
-### Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+### Part 2: Review OSS project documentation for alignment of security requirements with advertised features. 
 
-### Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
+### Part 3: Summarize your observations
 
-### Part 4: Summarize your observations
-
-### Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+### Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
 
 
@@ -56,9 +54,7 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 
 * Jenkins software provides sufficient support (out of the box) to adequately isolate the master node from unwanted access and malicious scripts 
 
-### Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
-
-### Part 3: Review OSS project documentation for alignment of security requirements with advertised features.
+### Part 2: Review OSS project documentation for alignment of security requirements with advertised features.
 
 From the OSS website, "Historically, Jenkins master and slaves behaved as if they altogether form a single distributed process. This means a slave can ask a master to do just about anything within the confinement of the operating system, such as accessing files on the master or trigger other jobs on Jenkins.
 This has increasingly become problematic, as larger enterprise deployments have developed more sophisticated trust separation model, where the administators of a master might take slaves owned by other teams. In such an environment, slaves are less trusted than the master."
@@ -140,13 +136,13 @@ File access rules: See above for what this field means.
 
 Whitelisting a command requires not only verifying that the command is intended to be used in this direction, but also that the command implementation is not exploitable by malicious slaves. This requires careful analysis of the source code, taking such things into account as all possible serializable fields.
 
-### Part 4: Summarize your observations
+### Part 3: Summarize your observations
 
 To avoid getting affected by file access rules, have the master work on files of a slave, instead of the other way around.
 
 So when a slave requests a master to execute a command and if it is not classified explicitly as intended for slave → master, Jenkins will err on the side of caution and refuses to execute the command.
 
-### Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+### Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
 * plugin issues
 
@@ -161,13 +157,11 @@ The easiest way to fix this is by extending from MasterToSlaveCallable, to indic
 
 * Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
 
-### Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+### Part 2: Review OSS project documentation for alignment of security requirements with advertised features. 
 
-### Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
+### Part 3: Summarize your observations
 
-### Part 4: Summarize your observations
-
-### Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+### Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
 ## Security Requirement Claim 5 
 * all
@@ -177,11 +171,9 @@ The easiest way to fix this is by extending from MasterToSlaveCallable, to indic
 
 * Jenkins adequately secures files to prevent unauthorized file accesses
 
-### Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+### Part 2: Review OSS project documentation for alignment of security requirements with advertised features. 
 
-### Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
+### Part 3: Summarize your observations
 
-### Part 4: Summarize your observations
-
-### Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+### Part 4: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
