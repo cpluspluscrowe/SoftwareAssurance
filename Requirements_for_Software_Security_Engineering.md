@@ -40,15 +40,15 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 
 #### (Chad Crowe)
 
-####Part 1: Assurance Claim:
+#### Part 1: Assurance Claim:
 
 Jenkins software provides sufficient support to adequately isolate the master node from malicious code or file access.
 
-####Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+#### Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
 
 ![](assets/JAX_Misuse_Diagrams2.png) 
 
-####Part 3: Review OSS project documentation for alignment of security requirements with advertised features.
+#### Part 3: Review OSS project documentation for alignment of security requirements with advertised features.
 
 Jenkin's nodes behave as a single distributed process.  As a consequence, the slave and master both perform similar and widely-varying processes, e.g. accessing files and triggering jobs.  This works within smaller projects.  Larger models require a more administration, i.e. a separation of trust. In these cases, the master is controlled by an administrator and slaves are designated to teams.  This designates the master as more trustworthy than any slave.  In Jenkins, this is a feature that can be enabled.
 
@@ -106,7 +106,7 @@ Callable that delegates execution to deserialized object is dangerous and needs 
 To avoid such hassles, one may rewrite code to not call back to a master from a slave. Instead, supply the slave with all the data it needs so no callbacks are necessary. This hierarchy of calling from master -> slave may not always be possible/practical, but it's much more secure.
 
 
-####Part 4: Summarize your observations
+#### Part 4: Summarize your observations
 
 Slave -> master code access/execution provides many opportunities for exploitation. Security must be set to prevent any slave -> master file access or code execution. It is best to give the slave no permissions on the master. 
 
@@ -114,7 +114,7 @@ Jenkins provides a security feature which prevents slave -> master file access/c
 
 Jenkins provides node-to-node permissions at the file granularity.  This can be used to secure sensitive information and prevent malicious local file execution.
 
-####Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+#### Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
 As a part of configuration, Jenkins lets user specify file access rules.  These rules are specified via tuples for read, write, creating directories/files, deleting directories/files, and retrieving node stats. These rules are then applied to files.  Regular expressions are used to map each rule to certain files. 
 
