@@ -26,15 +26,18 @@
 
 # **Requirements for Software Security Engineering**
 
-Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
+Link to Team Lucidchart mis-use cases updated with feedback from assignment:  
+* [JAX Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
+
+<!-------------------------------------------------------------------------------------------------------------------->
 ## Security Requirement Claim 1 and 4 
 * Larry S and James P
 
 ### Part 1 
 > Assurance Claims
-* Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
-* Jenkins adquately filters user input to prevent reflected XSS 
+* Claim 1: Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
+* Claim 4: Jenkins adequately filters user input to prevent reflected XSS 
 
 ### Part 2 
 > Review OSS project documentation for alignment of security requirements with advertised features
@@ -46,7 +49,7 @@ Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.co
 > Review OSS project documentation for security related configuration and installation issues. Summarize your observations
 
 
-
+<!-------------------------------------------------------------------------------------------------------------------->
 ## Security Requirement Claim 2
 * Chad Crowe
 
@@ -154,6 +157,9 @@ For the access control to work without requiring manual intervention by users, p
 For this purpose, the remote library has added the RoleSensitive interface that has a new checkRoles() method. Callable, FileCallable, and other similar interfaces now extend from this interface. So if you are directly implementing Callable, you will get an error saying that you have unimplemented abstract methods.
 The easiest way to fix this is by extending from MasterToSlaveCallable, to indicate that your Callable is only meant to be sent from a master to a slave, or SlaveToMasterCallable, to indicate that your Callable is meant to be sent from a slave to a master. Note that SlaveToMasterCallable can still be executed on a slave, as slaves do not perform this access control check. FileCallable similarly has MasterToSlaveFileCallable and SlaveToMasterFileCallable.
 
+
+
+<!-------------------------------------------------------------------------------------------------------------------->
 ## Security Requirement Claim 3
 * Dan R
 
@@ -173,6 +179,7 @@ The easiest way to fix this is by extending from MasterToSlaveCallable, to indic
 
 
 
+<!-------------------------------------------------------------------------------------------------------------------->
 ## Security Requirement Claim 5 
 * all
 
