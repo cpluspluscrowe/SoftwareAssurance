@@ -50,11 +50,13 @@ Part 2: Describe the security requirements for the project captured using mis-us
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features.
 
-Jenkin's nodes behave as a single distributed process.  As a consequence, the slave and master both perform similar and widely-varying processes, e.g. accessing files and triggering jobs.  This works within smaller projects.  Larger models require a more administration, i.e. a separation of trust. In these cases, the master is controlled by an administrator and slaves are designted to teams.  This designates the master as more trustworthy than any slave.
+Jenkin's nodes behave as a single distributed process.  As a consequence, the slave and master both perform similar and widely-varying processes, e.g. accessing files and triggering jobs.  This works within smaller projects.  Larger models require a more administration, i.e. a separation of trust. In these cases, the master is controlled by an administrator and slaves are designated to teams.  This designates the master as more trustworthy than any slave.  In Jenkins, this is a feature that can be enabled.
 
-There are multiple reasons for enabling this feature.  Consider the scenario where sensative information needs is running on the master.  Without such a separation, malicious slaves might access this information. 
+There are multiple reasons for enabling this feature. Consider the scenario where sensitive information needs is running on the master.  Without such a separation, malicious slaves might access this information. Once this setting is enabled, the slave will be unable to execute code on the master node.
 
-Jenkins even throws security exceptions to prevent undesireable node/information access.   
+If enabled, when a slave -> master request occurs, unless the command has been explicitly classified as intended for slave -> use, Jenkins will err on the side of caution and refuses to execute the command.
+
+Jenkins even throws security exceptions to prevent undesirable node/information access.   
 
     java.lang.SecurityException: slave may not create file on the master
     See http://jenkins-ci.org/security-144 for more details
@@ -62,10 +64,7 @@ Jenkins even throws security exceptions to prevent undesireable node/information
     java.lang.SecurityException: Sending org.jenkinsci.plugins.gitclient.CliGitAPIImpl$GetPrivateKeys from slave to master is prohibited.
     See http://jenkins-ci.org/security-144 for more details
 
-As of version 1.587 Jenkins has added an optional security wall between the master and slaves.  Unfortunately, the subsystem is turned off by default (for backward compatibility).  
-
-    
-There are three ways to enable this security setting.  
+As of version 1.587 Jenkins has added an optional security wall between the master and slaves.  Unfortunately, the subsystem is turned off by default (for backward compatibility).  Fortunately, there are a few ways to enable this setting:
 
 * web UI at http://jenkins/configureSecurity
 
@@ -77,27 +76,11 @@ There are three ways to enable this security setting.
         import jenkins.model.Jenkins
         Jenkins.instance.getInjector().getInstance(AdminWhitelistRule.class).setMasterKillSwitch(false)
     
-File access rules
-File access request from slaves is tested against the rules you specify. Each rule is a tuple that consists of:
-allow/deny: if the following two parameters match the current request being considered, an "allow" entry would allow the request to be carried out and a "deny" entry would deny the request to be rejected, regardless of what later rules might say.
-operation: the type of the operation requested. The following 6 values exist. You can also list them separating with ',' or use "all" to indicate a match to all operations:
-read: read file content or list directory entries
-write: write file content
-mkdirs: create a new directory
-create: create a file in an existing directory
-delete: delete a file or directory
-stat: read metadata of a file/directory, such as timestamp, length, file access modes.
-file path: regular expression that specifies file paths that matches this rule. In addition to the base regexp syntax, it supports the following tokens:
-<JENKINS_HOME> can be used as a prefix to match your $JENKINS_HOME directory
-<BUILDDIR> can be used as a prefix to match your build record directory, such as /var/lib/jenkins/job/foo/builds/2014-10-17_12-34-56
-<BUILDID> matches the timestamp-formatted build IDs, like 2014-10-17_12-34-56.
-The rules are ordered, and applied in that order. The earliest match wins. So for example, the following rules allow access to $JENKINS_HOME except its secrets folders:
+The OSS documentation mentioned File access rules.  Jenkins lets user specify file access rules.  These rules are specified via tuples for read, write, creating directories/files, deleting directories/files, and retrieving node stats. These rules are then applied to files.  Regular expressions are used to map each rule to certain files.  
 
-When marking Callable for slave → master, a care has to be taken to ensure that the implementation is not exploitable by malicious slaves.
-A malicious slave controls the Java serialization payload, so when your Callable gets deserialized on the master, all the serialized fields are controlled by the slave.
-A slave does not control class definitions on the master, so you can trust all the classes and methods to behave as it is written. It is not possible for a malicious slave to change the code executed on the master.
+Slaves should not have access to the master's files.  Otherwise, the slave might access and even alter sensitive/imperative data on the mater.  Instead, the master should work on files of a slave.  
 
-For example, the following SlaveToMasterCallable is exploitable. Callable itself is not public, but a malicious slave can send in arbitrary path, so it can be used to read any file on the master:
+Slave -> master code execution is also discouraged, since it opens up possibilities of slave -> master exploitation.  Unfortunately, by default Jenkins allows slave -> master execution. Extra caution must be taken in such cases, because this configuration makes slave -> master exploitations more likely.  If a malicious slave controls a Java serialization payload, then when this code is deserialized on the master each field will be controlled by the slave, i.e. the slave is now changing code within the master node.  A vulnerability could also appear if the slave is allowed to execute certain portions of code on the mater.  In the below code a slave could supply any code to the master's function and therefore read any file on the master:
 
 	// UNSAFE
 	class SomeCodeThatRunsOnSlave {
@@ -120,19 +103,18 @@ Callable that delegates execution to deserialized object is dangerous and needs 
 	        return null;
 	    }
 	}
-To avoid this hassle entirely, consider rewriting your code not to call back to a master from a slave. Instead, when a master first sends a command to a slave, you can carry all the data you'll need with you. This may not be always possible or practical, but it's a lot easier to secure.
+To avoid such hassles, one may rewrite code to not call back to a master from a slave. Instead, supply the slave with all the data it needs so no callbacks are necessary. This hierarchy of calling from master -> slave may not always be possible/practical, but it's much more secure.
 
-whitelisting commands: Currently whitelisted commands: See above for what this field means.
-Currently rejected commands: This section lists unclassified commands that Jenkins has actually rejected. You can check boxes and submit them to have Jenkins write them into the "currently whitelisted commands" section. Be careful when you do this, though. See the command whitelisting discussion above for the implications.
-File access rules: See above for what this field means.
-
-Whitelisting a command requires not only verifying that the command is intended to be used in this direction, but also that the command implementation is not exploitable by malicious slaves. This requires careful analysis of the source code, taking such things into account as all possible serializable fields.
+Jenkins allows for command whitelisting to guarantee only certain commands are run on its nodes.  One can also specify currently rejected commands.  Whitelisting still requires a lot of verification that such a command it not exploitable by malicious slaves.  This requires careful analysis of what source code is being run by such commands.  One must also take into account all possible serialization fields (which the slave controls in slave -> master execution).  
 
 Part 4: Summarize your observations
 
-To avoid getting affected by file access rules, have the master work on files of a slave, instead of the other way around.
+Slave -> master code access/execution provides many opportunities for exploitation. Security must be set to prevent any slave -> master file access or code execution. It is best to give the slave no permissions on the master. 
 
-So when a slave requests a master to execute a command and if it is not classified explicitly as intended for slave → master, Jenkins will err on the side of caution and refuses to execute the command.
+Jenkins provides a security feature which prevents slave -> master file access/code execution.  Yet, this feature is disabled by default for backward compatibility.  This feature is also disabled because it largely hinders usability on smaller/one-node projects. 
+
+Jenkins provides node-to-node permissions at the file granularity.  This can be used to secure sensitive information and prevent malicious local file execution.
+
 
 Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
