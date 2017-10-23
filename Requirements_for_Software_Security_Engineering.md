@@ -135,16 +135,21 @@ Part 1: Assurance Claim:
 Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
 
 Part 2: Describe the security requirements for the project captured using mis-use case diagrams. 
+Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/2)
 
 ![](assets/JAX_Misuse_Diagrams3.png) 
 
 Part 3: Review OSS project documentation for alignment of security requirements with advertised features. 
 
+According to the [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) page, Jenkins will allow all users to run anything as Jenkins by default. This can be fixed by establishing an authentication mechanism and setting permissions. The authentication component is more relevant in this case.  
+
+Jenkins supports two primary authentication models. For large installations, a corporate service like LDAP is recommended. For smaller installations, Jenkins can provide its own user database.  While not supported in the base installation, some plugins and configurations allow additional authentication features, such as authentication via github, or 2FA. 
+
 Part 4: Summarize your observations
 
-Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+Jenkins has many authentication and authorization features that can prevent unauthorized access to the system. These features are sufficient to prevent unauthorized access via traditional attacks against login forms. To gain access, attackers would need to obtain legitimate credentials or obtain a shell with code execution system on the host system.  
 
-Lucidchart link to mis-use case:  [Mise-use case link](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/2)
+Part 5: Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
 ## Security Requirement Claim 4 
 #### (James P)
