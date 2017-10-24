@@ -27,7 +27,7 @@
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 <!------------------------------------------------------------------->
 
-# - **Requirements for Software Security Engineering**
+# **Requirements for Software Security Engineering**
 
 Link to Team Lucidchart mis-use cases updated with feedback from assignment:  
 * [JAX Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
@@ -44,6 +44,25 @@ Link to Team Lucidchart mis-use cases updated with feedback from assignment:
 
 ### Part 2
 > Review OSS project documentation for alignment of security requirements with advertised features 
+
+Jenkins has very little documentation on CSRF or XSS, however there are a few here and there, some of which are security issues which have been reported via their online community. 
+
+The initial documentation page on [Protecting users of Jenkins from other threats](https://jenkins.io/doc/book/system-administration/security/) indicates there "are additional subsystems in Jenkins that protect Jenkins and users of Jenkins from indirect attacks". It then immediately specifies that all these features are disabled by default. A direct link to [CSRF Protection](https://wiki.jenkins.io/display/JENKINS/CSRF+Protection) is provided which goes into further detail with links to owasp's definition of [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) for further education on the matter. Additionally, a link to [Kaspersky](https://usa.kaspersky.com/resource-center/definitions/spear-phishing)  is provided to describe a common way to exploit CSRF using spear phishing.
+
+Since this feature is documented as disabled by default, some instructions are provided to inform the user on how to enable this security feature via a simple menu setting. Interestingly however, it is also noted that this security feature is only disabled  by default in 1.x versions of Jenkins, and is enabled by default in 2.x versions. Unfortunately for those users who are upgrading from 1.x to 2.x, the CSRF protection setting still does not get set by default during the conversion.
+
+For users of the 1.x version of Jenkins, a groovy script is provided to mitigate the security risk, which is provided here for completeness:
+
+**csrf.groovy**
+
+    import hudson.security.csrf.DefaultCrumbIssuer
+    import jenkins.model.Jenkins
+     
+    def instance = Jenkins.instance
+    instance.setCrumbIssuer(new DefaultCrumbIssuer(true))
+    instance.save()
+
+
 
 ### Part 3
 > Summarize your observations
