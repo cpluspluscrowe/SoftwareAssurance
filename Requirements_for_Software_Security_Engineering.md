@@ -208,13 +208,12 @@ Jenkins has many authentication and authorization features that can prevent unau
 > Review OSS project documentation for alignment of security requirements with advertised features. 
 > Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-Most of this setup needs to be done by default by the setup script, so what better a way of checking if that happens than by going t
-o their install documentation located [here](https://jenkins.io/doc/book/installing/), doing it word for word, and then checking the file permissions. In doing so, you end up with the root jenkins directory looking like below.
+Most of this setup needs to be done by default by the setup script, so what better a way of checking if that happens than by going to their install documentation located [here](https://jenkins.io/doc/book/installing/), doing it word for word, and then checking the file permissions. In doing so, you end up with the root jenkins directory looking like below.
 
 ![Root dir permissions](assets/jenkins_root_dir_perm.png)
 Obviously not the best, I would personally turn off the world permissions entirely, but eh, good enough. No one can go through and edit files they should not be able to. My only problem with it is that the "secret.key", which is used to log in as admin, is world readable. That seems silly to me, but to be fair, that is supposed to be used to login as admin for the first time and then other login methods should be setup by an administrator.
 
-As for logging access logs, Jenkins does not appear to do so by default, which in my mind is a huge failure in regards to the software. It should have some way of tracking what people have been doing on the server without requiring a system admin to set it up in the first place. Things like creating users, builds being created, and build history should be logged in a place seperate from the rest of the system. That being said, it does have a way of enabling logging for many different aspects of the application located [here](https://wiki.jenkins.io/display/JENKINS/Logging). This would allow you to use loggers currently in place or create custom loggers to be able to keep track of almost anything. Quite nifty and a good add.
+As for logging access logs, Jenkins does not appear to do so by default, which in my mind is a huge failure in regards to the software. It should have some way of tracking what people have been doing on the server without requiring a system admin to set it up in the first place. Things like creating users, builds being created, and build history should be logged in a place separate from the rest of the system. That being said, it does have a way of enabling logging for many different aspects of the application located [here](https://wiki.jenkins.io/display/JENKINS/Logging). This would allow you to use loggers currently in place or create custom loggers to be able to keep track of almost anything. Quite nifty and a good add.
 
 ### Part 3
 > Summarize your observations
