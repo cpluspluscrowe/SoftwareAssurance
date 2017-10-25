@@ -45,9 +45,9 @@ Link to Team Lucidchart mis-use cases updated with feedback from assignment:
 ### Part 2
 > Review OSS project documentation for alignment of security requirements with advertised features 
 
-Jenkins has very little documentation on CSRF or XSS, however there are a few here and there, one on XSS security issues which was reported via online community [here](https://issues.jenkins-ci.org/browse/JENKINS-6287).
+Jenkins has very little documentation on CSRF or XSS, however there are a few here and there, one on XSS security issues which was reported via online issue tracking here:[JENKINS-6287](https://issues.jenkins-ci.org/browse/JENKINS-6287).
 
-The initial documentation page on [Protecting users of Jenkins from other threats](https://jenkins.io/doc/book/system-administration/security/) indicates there "are additional subsystems in Jenkins that protect Jenkins and users of Jenkins from indirect attacks". It then immediately specifies that all these features are disabled by default. A direct link to [CSRF Protection](https://wiki.jenkins.io/display/JENKINS/CSRF+Protection) is provided which goes into further detail with links to owasp's definition of [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) for further education on the matter. Additionally, a link to [Kaspersky](https://usa.kaspersky.com/resource-center/definitions/spear-phishing) is provided to describe a common way to exploit CSRF using spear phishing.
+The initial documentation page on [Protecting users of Jenkins from other threats](https://jenkins.io/doc/book/system-administration/security/) indicates there "are additional subsystems in Jenkins that protect Jenkins and users of Jenkins from indirect attacks". It then immediately specifies that all these features are disabled by default. A direct link to [CSRF Protection](https://wiki.jenkins.io/display/JENKINS/CSRF+Protection) is provided which goes into further detail with links to owasp's definition of [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) for further education on the matter. Additionally, a link to Kaspersky is provided to describe a common way to exploit CSRF using [spear phishing](https://usa.kaspersky.com/resource-center/definitions/spear-phishing).
 
 Since this feature is documented as disabled by default, some instructions are provided to inform the user on how to enable this security feature via a simple menu setting. Interestingly however, it is also noted that this security feature is only disabled  by default in 1.x versions of Jenkins, and is enabled by default in 2.x versions. Unfortunately for those users who are upgrading from 1.x to 2.x, the CSRF protection setting still does not get set by default during the conversion.
 
@@ -62,7 +62,7 @@ For users of the 1.x version of Jenkins, a groovy script is provided to mitigate
     instance.setCrumbIssuer(new DefaultCrumbIssuer(true))
     instance.save()
 
-
+A few "gotchas" are listed here as well, one for nginx detailed in issue [JENKINS-23793](https://issues.jenkins-ci.org/browse/JENKINS-23793), and another referencing the Jenkins [REST API](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) which includes additional CSRF protection measures by adding a CSRF protection token in the request header of the message posted. 
 
 ### Part 3
 > Summarize your observations
