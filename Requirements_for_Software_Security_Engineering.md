@@ -171,7 +171,7 @@ Plugins also need to be configured for security.  Plugins also need to classify 
 
 <!------------------------------------------------------------------->
 ## Security Requirement Claim 3
-* Dan P
+* Dan R
 
 ### Part 1
 > Assurance Claim
