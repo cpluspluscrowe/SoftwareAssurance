@@ -29,9 +29,9 @@
 # **Requirements for Software Security Engineering**
 
 Link to Team Lucidchart mis-use cases updated with feedback from assignment:  
-* [JAX Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
+* [JAX misuse cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
-<!-------------------------------------------------------------------> 
+<!------------------------------------------------------------------->
 ## Security Requirement Claim 1 and Claim 4
 * Larry S and James P
 
@@ -39,10 +39,10 @@ Link to Team Lucidchart mis-use cases updated with feedback from assignment:
 > Assurance Claim
 
 * Claim 1: Jenkins provides an acceptable level of protection from Cross Site Request Forgery (CSRF) attacks
-* Claim 2: Jenkins adequately filters user input to prevent reflected XSS 
+* Claim 2: Jenkins adequately filters user input to prevent reflected XSS
 
 ### Part 2
-> Review OSS project documentation for alignment of security requirements with advertised features 
+> Review OSS project documentation for alignment of security requirements with advertised features
 
 > Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
@@ -58,12 +58,12 @@ For users of the 1.x version of Jenkins, a groovy script is provided to mitigate
 
     import hudson.security.csrf.DefaultCrumbIssuer
     import jenkins.model.Jenkins
-     
+
     def instance = Jenkins.instance
     instance.setCrumbIssuer(new DefaultCrumbIssuer(true))
     instance.save()
 
-A few "gotchas" are listed here as well, one for nginx detailed in issue [JENKINS-23793](https://issues.jenkins-ci.org/browse/JENKINS-23793), and another referencing the Jenkins [REST API](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) which includes additional CSRF protection measures by adding a CSRF protection token in the request header of the message posted. 
+A few "gotchas" are listed here as well, one for nginx detailed in issue [JENKINS-23793](https://issues.jenkins-ci.org/browse/JENKINS-23793), and another referencing the Jenkins [REST API](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) which includes additional CSRF protection measures by adding a CSRF protection token in the request header of the message posted.
 
 As for XSS, the only link we could find relating to protection was [here](https://wiki.jenkins.io/display/JENKINS/Jelly+and+XSS+prevention). This is talking about writing plugins for Jenkins and is apparently using Jelly to do their escaping. We could not find any confirmation that Jelly is what is being used in their application for escaping also. Regardless, we ran manual tests and came up with proof that javascript filtering is happening, see below.
 
@@ -79,11 +79,11 @@ Jenkins actually one ups the process and does not just filter it, it filters it 
 ### Part 3
 > Summarize your observations
 
-Jenkins provides mechanisms for adequately dealing with both CSRF and XSS. From a documentation perspective, there is a little room for improvement there. One page indicates CSRF is disabled by default, and another says it is enabled by default for versions 2.x, both in the same breadcrumb. XSS isn't any better, leaving a large hole and a serious lack of value added documentation on this topic. 
+Jenkins provides mechanisms for adequately dealing with both CSRF and XSS. From a documentation perspective, there is a little room for improvement there. One page indicates CSRF is disabled by default, and another says it is enabled by default for versions 2.x, both in the same breadcrumb. XSS isn't any better, leaving a large hole and a serious lack of value added documentation on this topic.
 
 An interesting find shows that the Jenkins community is following best practices by releasing security vulnerabilities. A [Jenkins Security Advisory](https://jenkins.io/security/advisory/2015-12-09/) published on 2015-12-09 mentions vulnerabilities issues with both CSRF and XSS.
 
-<!-------------------------------------------------------------------> 
+<!------------------------------------------------------------------->
 ## Security Requirement Claim 2
  * Chad C
 
@@ -120,7 +120,7 @@ As of version 1.587 Jenkins has added an optional security wall between the mast
         import jenkins.security.s2m.AdminWhitelistRule
         import jenkins.model.Jenkins
         Jenkins.instance.getInjector().getInstance(AdminWhitelistRule.class).setMasterKillSwitch(false)
-    
+
 The OSS documentation mentioned File access rules.  Jenkins lets user specify file access rules.  These rules are specified via tuples for read, write, creating directories/files, deleting directories/files, and retrieving node stats. These rules are then applied to files.  Regular expressions are used to map each rule to certain files.  
 
 Slaves should not have access to the master's files.  Otherwise, the slave might access and even alter sensitive/imperative data on the mater.  Instead, the master should work on files of a slave.  
@@ -154,16 +154,16 @@ To avoid such hassles, one may rewrite code to not call back to a master from a 
 ### Part 3
 > Summarize your observations
 
-Slave -> master code access/execution provides many opportunities for exploitation. Security must be set to prevent any slave -> master file access or code execution. It is best to give the slave no permissions on the master. 
+Slave -> master code access/execution provides many opportunities for exploitation. Security must be set to prevent any slave -> master file access or code execution. It is best to give the slave no permissions on the master.
 
-Jenkins provides a security feature which prevents slave -> master file access/code execution.  Yet, this feature is disabled by default for backward compatibility.  This feature is also disabled because it largely hinders usability on smaller/one-node projects. 
+Jenkins provides a security feature which prevents slave -> master file access/code execution.  Yet, this feature is disabled by default for backward compatibility.  This feature is also disabled because it largely hinders usability on smaller/one-node projects.
 
 Jenkins provides node-to-node permissions at the file granularity.  This can be used to secure sensitive information and prevent malicious local file execution.
 
-### Part 4 
+### Part 4
  > Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-As a part of configuration, Jenkins lets user specify file access rules.  These rules are specified via tuples for read, write, creating directories/files, deleting directories/files, and retrieving node stats. These rules are then applied to files.  Regular expressions are used to map each rule to certain files. 
+As a part of configuration, Jenkins lets user specify file access rules.  These rules are specified via tuples for read, write, creating directories/files, deleting directories/files, and retrieving node stats. These rules are then applied to files.  Regular expressions are used to map each rule to certain files.
 
 There are many possibilities of exploitation due to file access rules.  If files are later added/renamed and file access rules are not kept up-to-date, then malicious users may gain access/control over these files.  Also, if the user is unfamiliar with regex expressions, they might misconfigure file access rules.  Each of these cases can aid malicious users in exploiting the system.
 
@@ -172,28 +172,30 @@ Jenkins allows for command whitelisting to guarantee only certain commands are r
 Plugins also need to be configured for security.  Plugins also need to classify their methods and whether they are meant to be run on a master or on a slave.  For this purpose, the remote library has added the interfaces to control master method access.  There is also an extendable class to guarantee only master -> slave execution (called MasterToSlaveCallable).  The FileCallable is similar and only enables master -> slave file access.  These classes and wrappers help prevent the mis-use of accessible master-code by malicious slaves.
 
 <!------------------------------------------------------------------->
-## Security Requirement Claim 3
- * Dan R
-
 ### Part 1
 > Assurance Claim
 
 * Jenkins authentication mechanisms are sufficient to prevent malicious users from gaining access to the system
 
 ### Part 2
-> Review OSS project documentation for alignment of security requirements with advertised features. 
+> Review OSS project documentation for alignment of security requirements with advertised features.
+> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-According to the [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) page, Jenkins will allow all users to run anything as Jenkins by default. This can be fixed by establishing an authentication mechanism and setting permissions. The authentication component is more relevant in this case.  
+According to the [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) page, Jenkins will allow anyone to run anything as Jenkins by default, which does not fulfil the security requirement. This can be fixed by establishing an authentication mechanism.
 
-Jenkins supports two primary authentication models. For large installations, a corporate service like LDAP is recommended. For smaller installations, Jenkins can provide its own user database.  While not supported in the base installation, some plugins and configurations allow additional authentication features, such as authentication via github, or 2FA. 
+Jenkins supports two primary authentication models. For large installations, a corporate service like LDAP is recommended. For smaller installations, Jenkins can provide its own user database.  While not supported in the base installation, some plugins and configurations allow additional authentication features, such as authentication via github, or 2FA.
+
+Jenkins provides a very compact interface to select an authentication mechanism and select permissions.
+
+![Config](https://wiki.jenkins.io/download/attachments/10059796/owndb.png?version=1&modificationDate=1202251054000&api=v2)
+
+Additional configuration steps will depend on the selected authentication mechanism.
+
 
 ### Part 3
 > Summarize your observations
 
-Jenkins has many authentication and authorization features that can prevent unauthorized access to the system. These features are sufficient to prevent unauthorized access via traditional attacks against login forms. To gain access, attackers would need to obtain legitimate credentials or obtain a shell with code execution system on the host system.  
-
-### Part 4
- > Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+Jenkins has many authentication and authorization features that can prevent unauthorized access to the system. These features are sufficient to prevent unauthorized access via traditional attacks against login forms. To gain access, attackers would need to obtain legitimate credentials or obtain a shell with code execution system on the host system.
 
 <!------------------------------------------------------------------->
 ## Security Requirement Claim 5 
@@ -205,16 +207,15 @@ Jenkins has many authentication and authorization features that can prevent unau
 * Jenkins adequately secures files to prevent unauthorized file accesses
 
 ### Part 2
-> Review OSS project documentation for alignment of security requirements with advertised features. 
+> Review OSS project documentation for alignment of security requirements with advertised features.
 > Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-Most of this setup needs to be done by default by the setup script, so what better a way of checking if that happens than by going t
-o their install documentation located [here](https://jenkins.io/doc/book/installing/), doing it word for word, and then checking the file permissions. In doing so, you end up with the root jenkins directory looking like below.
+Most of this setup needs to be done by default by the setup script, so what better a way of checking if that happens than by going to their install documentation located [here](https://jenkins.io/doc/book/installing/), doing it word for word, and then checking the file permissions. In doing so, you end up with the root jenkins directory looking like below.
 
 ![Root dir permissions](assets/jenkins_root_dir_perm.png)
 Obviously not the best, we would personally turn off the world permissions entirely, but eh, good enough. No one can go through and edit files they should not be able to. My only problem with it is that the "secret.key", which is used to log in as admin, is world readable. That seems silly to me, but to be fair, that is supposed to be used to login as admin for the first time and then other login methods should be setup by an administrator.
 
-As for logging access logs, Jenkins does not appear to do so by default, which in my mind is a huge failure in regards to the software. It should have some way of tracking what people have been doing on the server without requiring a system admin to set it up in the first place. Things like creating users, builds being created, and build history should be logged in a place seperate from the rest of the system. That being said, it does have a way of enabling logging for many different aspects of the application located [here](https://wiki.jenkins.io/display/JENKINS/Logging). This would allow you to use loggers currently in place or create custom loggers to be able to keep track of almost anything. Quite nifty and a good add.
+As for logging access logs, Jenkins does not appear to do so by default, which in my mind is a huge failure in regards to the software. It should have some way of tracking what people have been doing on the server without requiring a system admin to set it up in the first place. Things like creating users, builds being created, and build history should be logged in a place separate from the rest of the system. That being said, it does have a way of enabling logging for many different aspects of the application located [here](https://wiki.jenkins.io/display/JENKINS/Logging). This would allow you to use loggers currently in place or create custom loggers to be able to keep track of almost anything. Quite nifty and a good add.
 
 ### Part 3
 > Summarize your observations
