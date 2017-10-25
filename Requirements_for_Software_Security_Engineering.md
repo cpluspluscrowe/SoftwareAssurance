@@ -218,4 +218,5 @@ As for logging access logs, Jenkins does not appear to do so by default, which i
 
 ### Part 3
 > Summarize your observations
+
 Overall, I think Jenkins did a nice job with their file security and logging. By default they are lacking default logging and setup can be a bit reliant on a good administrator not messing things up for authentication, but it really could be worse. I would score them a 8/10 in this section simply because they need a bit of polishing, but it is already really good.
