@@ -16,12 +16,10 @@
     + [Part 1](#part-1-2)
     + [Part 2](#part-2-2)
     + [Part 3](#part-3-2)
-    + [Part 4](#part-4-1)
   * [Security Requirement Claim 5](#security-requirement-claim-5)
     + [Part 1](#part-1-3)
     + [Part 2](#part-2-3)
     + [Part 3](#part-3-3)
-    + [Part 4](#part-4-2)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 <!------------------------------------------------------------------->
@@ -172,6 +170,9 @@ Jenkins allows for command whitelisting to guarantee only certain commands are r
 Plugins also need to be configured for security.  Plugins also need to classify their methods and whether they are meant to be run on a master or on a slave.  For this purpose, the remote library has added the interfaces to control master method access.  There is also an extendable class to guarantee only master -> slave execution (called MasterToSlaveCallable).  The FileCallable is similar and only enables master -> slave file access.  These classes and wrappers help prevent the mis-use of accessible master-code by malicious slaves.
 
 <!------------------------------------------------------------------->
+## Security Requirement Claim 3
+* Dan P
+
 ### Part 1
 > Assurance Claim
 
