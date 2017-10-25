@@ -29,7 +29,7 @@
 # **Requirements for Software Security Engineering**
 
 Link to Team Lucidchart mis-use cases updated with feedback from assignment:  
-* [JAX Mise-use cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
+* [JAX misuse cases](https://www.lucidchart.com/documents/edit/fd7c6a2d-548b-40f9-8d09-45d134f69ed8/0)
 
 <!-------------------------------------------------------------------> 
 ## Security Requirement Claim 1 and Claim 4
