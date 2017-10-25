@@ -2,27 +2,26 @@
 
 <!-- TABLE OF CONTENTS -->
 <!------------------------------------------------------------------->
-- [- **Requirements for Software Security Engineering**](#----requirements-for-software-security-engineering--)
+- [**Requirements for Software Security Engineering**](#--requirements-for-software-security-engineering--)
   * [Security Requirement Claim 1 and Claim 4](#security-requirement-claim-1-and-claim-4)
     + [Part 1](#part-1)
     + [Part 2](#part-2)
     + [Part 3](#part-3)
-    + [Part 4](#part-4)
   * [Security Requirement Claim 2](#security-requirement-claim-2)
     + [Part 1](#part-1-1)
     + [Part 2](#part-2-1)
     + [Part 3](#part-3-1)
-    + [Part 4](#part-4-1)
+    + [Part 4](#part-4)
   * [Security Requirement Claim 3](#security-requirement-claim-3)
     + [Part 1](#part-1-2)
     + [Part 2](#part-2-2)
     + [Part 3](#part-3-2)
-    + [Part 4](#part-4-2)
+    + [Part 4](#part-4-1)
   * [Security Requirement Claim 5](#security-requirement-claim-5)
     + [Part 1](#part-1-3)
     + [Part 2](#part-2-3)
     + [Part 3](#part-3-3)
-    + [Part 4](#part-4-3)
+    + [Part 4](#part-4-2)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 <!------------------------------------------------------------------->
@@ -44,6 +43,8 @@ Link to Team Lucidchart mis-use cases updated with feedback from assignment:
 
 ### Part 2
 > Review OSS project documentation for alignment of security requirements with advertised features 
+
+> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
 Jenkins has very little documentation on CSRF or XSS, however there are a few here and there, one on XSS security issues which was reported via online issue tracking here:[JENKINS-6287](https://issues.jenkins-ci.org/browse/JENKINS-6287).
 
@@ -78,9 +79,9 @@ Jenkins actually one ups the process and does not just filter it, it filters it 
 ### Part 3
 > Summarize your observations
 
-### Part 4
-> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+Jenkins provides mechanisms for adequately dealing with both CSRF and XSS. From a documentation perspective, there is a little room for improvement there. One page indicates CSRF is disabled by default, and another says it is enabled by default for versions 2.x, both in the same breadcrumb. XSS isn't any better, leaving a large hole and a serious lack of value added documentation on this topic. 
 
+An interesting find shows that the Jenkins community is following best practices by releasing security vulnerabilities. A [Jenkins Security Advisory](https://jenkins.io/security/advisory/2015-12-09/) published on 2015-12-09 mentions vulnerabilities issues with both CSRF and XSS.
 
 <!-------------------------------------------------------------------> 
 ## Security Requirement Claim 2
