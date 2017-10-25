@@ -65,7 +65,7 @@ For users of the 1.x version of Jenkins, a groovy script is provided to mitigate
 
 A few "gotchas" are listed here as well, one for nginx detailed in issue [JENKINS-23793](https://issues.jenkins-ci.org/browse/JENKINS-23793), and another referencing the Jenkins [REST API](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) which includes additional CSRF protection measures by adding a CSRF protection token in the request header of the message posted. 
 
-As for XSS, the only link we could find relating to protection was [here](https://wiki.jenkins.io/display/JENKINS/Jelly+and+XSS+prevention). This is talking about writing plugins for Jenkins and is apparently using Jelly to do their escaping. I could not find any confirmation that Jelly is what is being used in their application for escaping also. Regardless, I ran manual tests and came up with proof that javascript filtering is happening, see below.
+As for XSS, the only link we could find relating to protection was [here](https://wiki.jenkins.io/display/JENKINS/Jelly+and+XSS+prevention). This is talking about writing plugins for Jenkins and is apparently using Jelly to do their escaping. We could not find any confirmation that Jelly is what is being used in their application for escaping also. Regardless, we ran manual tests and came up with proof that javascript filtering is happening, see below.
 
 ![Before Proxy](assets/jenkins_createItem_before_proxy.png)
 This is what happens when a user tries to send javascript in the first place to the naming system. Obviously jenkins can not just rely on front end javascript to stop the attack, so below is us getting around the javascript.
@@ -212,11 +212,11 @@ Most of this setup needs to be done by default by the setup script, so what bett
 o their install documentation located [here](https://jenkins.io/doc/book/installing/), doing it word for word, and then checking the file permissions. In doing so, you end up with the root jenkins directory looking like below.
 
 ![Root dir permissions](assets/jenkins_root_dir_perm.png)
-Obviously not the best, I would personally turn off the world permissions entirely, but eh, good enough. No one can go through and edit files they should not be able to. My only problem with it is that the "secret.key", which is used to log in as admin, is world readable. That seems silly to me, but to be fair, that is supposed to be used to login as admin for the first time and then other login methods should be setup by an administrator.
+Obviously not the best, we would personally turn off the world permissions entirely, but eh, good enough. No one can go through and edit files they should not be able to. My only problem with it is that the "secret.key", which is used to log in as admin, is world readable. That seems silly to me, but to be fair, that is supposed to be used to login as admin for the first time and then other login methods should be setup by an administrator.
 
 As for logging access logs, Jenkins does not appear to do so by default, which in my mind is a huge failure in regards to the software. It should have some way of tracking what people have been doing on the server without requiring a system admin to set it up in the first place. Things like creating users, builds being created, and build history should be logged in a place seperate from the rest of the system. That being said, it does have a way of enabling logging for many different aspects of the application located [here](https://wiki.jenkins.io/display/JENKINS/Logging). This would allow you to use loggers currently in place or create custom loggers to be able to keep track of almost anything. Quite nifty and a good add.
 
 ### Part 3
 > Summarize your observations
 
-Overall, I think Jenkins did a nice job with their file security and logging. By default they are lacking default logging and setup can be a bit reliant on a good administrator not messing things up for authentication, but it really could be worse. I would score them a 8/10 in this section simply because they need a bit of polishing, but it is already really good.
+Overall, we think Jenkins did a nice job with their file security and logging. By default they are lacking default logging and setup can be a bit reliant on a good administrator not messing things up for authentication, but it really could be worse. we would score them a 8/10 in this section simply because they need a bit of polishing, but it is already really good.
