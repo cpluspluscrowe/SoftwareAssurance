@@ -64,6 +64,17 @@ For users of the 1.x version of Jenkins, a groovy script is provided to mitigate
 
 A few "gotchas" are listed here as well, one for nginx detailed in issue [JENKINS-23793](https://issues.jenkins-ci.org/browse/JENKINS-23793), and another referencing the Jenkins [REST API](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) which includes additional CSRF protection measures by adding a CSRF protection token in the request header of the message posted. 
 
+As for XSS, the only link we could find relating to protection was [here](https://wiki.jenkins.io/display/JENKINS/Jelly+and+XSS+prevention). This is talking about writing plugins for Jenkins and is apparently using Jelly to do their escaping. I could not find any confirmation that Jelly is what is being used in their appliction for escaping also. Regardless, I ran manual tests and came up with proof that javacript filtering is happening, see below.
+
+![Before Proxy](assets/jenkins_createItem_before_proxy.png)
+This is what happens when a user tries to send javascript in the first place to the naming system. Obviously jenkins can not just rely on front end javascript to stop the attack, so below is us getting around the javascript.
+
+![Proxy](assets/jenkins_xss_proxy.png)
+Once you submit this data, hopefully jenkins filters the data appropriately.
+
+![After Proxy](assets/jenkins_createItem_after_proxy.png)
+Jenkins actually one ups the process and doesn't just filter it, it filters it and then completely denies the submission. Well played Jenkins. Their filtering engine simply needs to be used on the rest of their input and they will be pretty solid on denying XSS attacks.
+
 ### Part 3
 > Summarize your observations
 
