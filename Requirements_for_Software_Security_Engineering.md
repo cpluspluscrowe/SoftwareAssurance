@@ -2,27 +2,26 @@
 
 <!-- TABLE OF CONTENTS -->
 <!------------------------------------------------------------------->
-- [- **Requirements for Software Security Engineering**](#----requirements-for-software-security-engineering--)
+- [**Requirements for Software Security Engineering**](#--requirements-for-software-security-engineering--)
   * [Security Requirement Claim 1 and Claim 4](#security-requirement-claim-1-and-claim-4)
     + [Part 1](#part-1)
     + [Part 2](#part-2)
     + [Part 3](#part-3)
-    + [Part 4](#part-4)
   * [Security Requirement Claim 2](#security-requirement-claim-2)
     + [Part 1](#part-1-1)
     + [Part 2](#part-2-1)
     + [Part 3](#part-3-1)
-    + [Part 4](#part-4-1)
+    + [Part 4](#part-4)
   * [Security Requirement Claim 3](#security-requirement-claim-3)
     + [Part 1](#part-1-2)
     + [Part 2](#part-2-2)
     + [Part 3](#part-3-2)
-    + [Part 4](#part-4-2)
+    + [Part 4](#part-4-1)
   * [Security Requirement Claim 5](#security-requirement-claim-5)
     + [Part 1](#part-1-3)
     + [Part 2](#part-2-3)
     + [Part 3](#part-3-3)
-    + [Part 4](#part-4-3)
+    + [Part 4](#part-4-2)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 <!------------------------------------------------------------------->
@@ -45,9 +44,11 @@ Link to Team Lucidchart mis-use cases updated with feedback from assignment:
 ### Part 2
 > Review OSS project documentation for alignment of security requirements with advertised features 
 
-Jenkins has very little documentation on CSRF or XSS, however there are a few here and there, one on XSS security issues which was reported via online community [here](https://issues.jenkins-ci.org/browse/JENKINS-6287).
+> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
 
-The initial documentation page on [Protecting users of Jenkins from other threats](https://jenkins.io/doc/book/system-administration/security/) indicates there "are additional subsystems in Jenkins that protect Jenkins and users of Jenkins from indirect attacks". It then immediately specifies that all these features are disabled by default. A direct link to [CSRF Protection](https://wiki.jenkins.io/display/JENKINS/CSRF+Protection) is provided which goes into further detail with links to owasp's definition of [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) for further education on the matter. Additionally, a link to [Kaspersky](https://usa.kaspersky.com/resource-center/definitions/spear-phishing) is provided to describe a common way to exploit CSRF using spear phishing.
+Jenkins has very little documentation on CSRF or XSS, however there are a few here and there, one on XSS security issues which was reported via online issue tracking here:[JENKINS-6287](https://issues.jenkins-ci.org/browse/JENKINS-6287).
+
+The initial documentation page on [Protecting users of Jenkins from other threats](https://jenkins.io/doc/book/system-administration/security/) indicates there "are additional subsystems in Jenkins that protect Jenkins and users of Jenkins from indirect attacks". It then immediately specifies that all these features are disabled by default. A direct link to [CSRF Protection](https://wiki.jenkins.io/display/JENKINS/CSRF+Protection) is provided which goes into further detail with links to owasp's definition of [CSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) for further education on the matter. Additionally, a link to Kaspersky is provided to describe a common way to exploit CSRF using [spear phishing](https://usa.kaspersky.com/resource-center/definitions/spear-phishing).
 
 Since this feature is documented as disabled by default, some instructions are provided to inform the user on how to enable this security feature via a simple menu setting. Interestingly however, it is also noted that this security feature is only disabled  by default in 1.x versions of Jenkins, and is enabled by default in 2.x versions. Unfortunately for those users who are upgrading from 1.x to 2.x, the CSRF protection setting still does not get set by default during the conversion.
 
@@ -62,7 +63,9 @@ For users of the 1.x version of Jenkins, a groovy script is provided to mitigate
     instance.setCrumbIssuer(new DefaultCrumbIssuer(true))
     instance.save()
 
-As for XSS, the only link we could find relating to protection was [here](https://wiki.jenkins.io/display/JENKINS/Jelly+and+XSS+prevention). This is talking about writing plugins for Jenkins and is apparently using Jelly to do their escaping. I could not find any confirmation that Jelly is what is being used in their appliction for escaping also. Regardless, I ran manual tests and came up with proof that javacript filtering is happening, see below.
+A few "gotchas" are listed here as well, one for nginx detailed in issue [JENKINS-23793](https://issues.jenkins-ci.org/browse/JENKINS-23793), and another referencing the Jenkins [REST API](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) which includes additional CSRF protection measures by adding a CSRF protection token in the request header of the message posted. 
+
+As for XSS, the only link we could find relating to protection was [here](https://wiki.jenkins.io/display/JENKINS/Jelly+and+XSS+prevention). This is talking about writing plugins for Jenkins and is apparently using Jelly to do their escaping. I could not find any confirmation that Jelly is what is being used in their application for escaping also. Regardless, I ran manual tests and came up with proof that javascript filtering is happening, see below.
 
 ![Before Proxy](assets/jenkins_createItem_before_proxy.png)
 This is what happens when a user tries to send javascript in the first place to the naming system. Obviously jenkins can not just rely on front end javascript to stop the attack, so below is us getting around the javascript.
@@ -71,14 +74,14 @@ This is what happens when a user tries to send javascript in the first place to 
 Once you submit this data, hopefully jenkins filters the data appropriately.
 
 ![After Proxy](assets/jenkins_createItem_after_proxy.png)
-Jenkins actually one ups the process and doesn't just filter it, it filters it and then completely denies the submission. Well played Jenkins. Their filtering engine simply needs to be used on the rest of their input and they will be pretty solid on denying XSS attacks.
+Jenkins actually one ups the process and does not just filter it, it filters it and then completely denies the submission. Well played Jenkins. Their filtering engine simply needs to be used on the rest of their input and they will be pretty solid on denying XSS attacks.
 
 ### Part 3
 > Summarize your observations
 
-### Part 4
-> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+Jenkins provides mechanisms for adequately dealing with both CSRF and XSS. From a documentation perspective, there is a little room for improvement there. One page indicates CSRF is disabled by default, and another says it is enabled by default for versions 2.x, both in the same breadcrumb. XSS isn't any better, leaving a large hole and a serious lack of value added documentation on this topic. 
 
+An interesting find shows that the Jenkins community is following best practices by releasing security vulnerabilities. A [Jenkins Security Advisory](https://jenkins.io/security/advisory/2015-12-09/) published on 2015-12-09 mentions vulnerabilities issues with both CSRF and XSS.
 
 <!-------------------------------------------------------------------> 
 ## Security Requirement Claim 2
