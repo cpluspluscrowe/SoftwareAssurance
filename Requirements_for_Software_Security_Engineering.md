@@ -181,7 +181,7 @@ Plugins also need to be configured for security.  Plugins also need to classify 
 ### Part 2
 > Review OSS project documentation for alignment of security requirements with advertised features.
 
-> Review OSS project documentation for security related configuration and installation issues. Summarize your observations.
+> Review OSS project documentation for security related configuration and installation issues. 
 
 According to the [Standard Security Setup](https://wiki.jenkins.io/display/JENKINS/Standard+Security+Setup) page, Jenkins will allow anyone to run anything as Jenkins by default, which does not fulfil the security requirement. This can be fixed by establishing an authentication mechanism.
 
@@ -193,6 +193,7 @@ Jenkins provides a very compact interface to select an authentication mechanism 
 
 Additional configuration steps will depend on the selected authentication mechanism.
 
+There does not appear to be any major, unresolved issues with the default authentication mechanisms. There are some [authentication issues] (https://issues.jenkins-ci.org/browse/JENKINS-21304?jql=status%20%3D%20Open%20AND%20text%20~%20%22authentication%22) related to plugins and custom instalations, but nothing affecting typical installs. 
 
 ### Part 3
 > Summarize your observations
