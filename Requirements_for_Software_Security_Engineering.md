@@ -193,7 +193,7 @@ Jenkins provides a very compact interface to select an authentication mechanism 
 
 Additional configuration steps will depend on the selected authentication mechanism.
 
-There does not appear to be any major, unresolved issues with the default authentication mechanisms. There are some [authentication issues](https://issues.jenkins-ci.org/browse/JENKINS-21304?jql=status%20%3D%20Open%20AND%20text%20~%20%22authentication%22) related to plugins and custom instalations, but nothing affecting typical installs. 
+There does not appear to be any major, unresolved issues with the default authentication mechanisms. There are some [authentication issues](https://issues.jenkins-ci.org/browse/JENKINS-21304?jql=status%20%3D%20Open%20AND%20text%20~%20%22authentication%22) related to plugins and custom installations, but nothing affecting typical installs. 
 
 ### Part 3
 > Summarize your observations
