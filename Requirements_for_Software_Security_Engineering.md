@@ -50,6 +50,8 @@ The initial documentation page on [Protecting users of Jenkins from other threat
 
 Since this feature is documented as disabled by default, some instructions are provided to inform the user on how to enable this security feature via a simple menu setting. Interestingly however, it is also noted that this security feature is only disabled  by default in 1.x versions of Jenkins, and is enabled by default in 2.x versions. Unfortunately for those users who are upgrading from 1.x to 2.x, the CSRF protection setting still does not get set by default during the conversion.
 
+**[Updated 11/18/2017]** - Due to the inconsistencies found in the documentation, a pull request was submitted and accepted, to correct spelling mistakes and to clarify which versions of the software are disabled by default without having to navigate additional links. See [Pull Request #1233](https://github.com/jenkins-infra/jenkins.io/pull/1233) 
+
 For users of the 1.x version of Jenkins, a groovy script is provided to mitigate the security risk, which is provided here for completeness:
 
 **csrf.groovy**
