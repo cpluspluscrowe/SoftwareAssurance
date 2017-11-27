@@ -1,4 +1,4 @@
-**Jenkins Code Analysis - Team JAX**
+# Jenkins Code Analysis - Team JAX
 
 2-3 page report that describes the following:
 * Code review strategy
@@ -21,7 +21,7 @@ The code being reviewed related to CSRF vulnerabilities which related directly b
 ## Jenkins.io
 During a manual scan of the code and associated documentation, it was discovered that the existing documentation was out of date and needed a little touch up. In this case, the documentation made reference to a CSRF feature being disabled by default. This isn't entirely accurate however. This feature is only disabled by default in Jenkins v1.x and when upgrading to v2.x. If a use initially installed v2.x however, the feature is enabled by default.
 
-* jenkins.io pull request [#1233](https://github.com/jenkins-infra/jenkins.io/pull/1233) was submitted on Nov 17, 2017
+* jenkins-infra/jenkins.io pull request [#1233](https://github.com/jenkins-infra/jenkins.io/pull/1233) was submitted on Nov 17, 2017
 * The request accepted and merged into the master on Nov 18th, 2017 after a suggested additional change was submitted
 * A mention on the course project page [2017 Hall of Fame](https://robinagandhi.github.io/swa/pages/halloffame.html) has been made
 * The updated documentation including the above approved change can be found here:
@@ -58,5 +58,5 @@ The issue is referenced as [squid:S2976](https://sonarcloud.io/organizations/lar
 The critical issue is tagged as belonging to [owasp-a9](https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities) which is labelled as the **"Top 10 of 2013 - A9 - Using Components with Known Vulnerabilities"**.
 
 After a full review of the vulnerability, it was decided a pull request could be made:
-* A pull request [#3161](https://github.com/jenkinsci/jenkins/pull/3161) was submitted Nov 26, 2017
+* jenkinsci/jenkins pull request [#3161](https://github.com/jenkinsci/jenkins/pull/3161) was submitted Nov 26, 2017
 
