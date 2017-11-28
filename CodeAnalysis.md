@@ -52,8 +52,11 @@ The full [Sonar Cloud Report](https://sonarcloud.io/dashboard?id=org.jenkins-ci.
 Further investigation into these vulnerabilities, shows that only 9 of them are critical,
 however only 1 is related to a java file, the other 8 to javascript eval calls.
 
-Upon review of the [filtered report,](https://sonarcloud.io/project/issues?id=org.jenkins-ci.main%3Apom%3Amaster&resolved=false&severities=CRITICAL&types=VULNERABILITY)
-a single [item of interest](https://sonarcloud.io/project/issues?id=org.jenkins-ci.main%3Apom%3Amaster&issues=AV_6jszzu03uZzf04zss&open=AV_6jszzu03uZzf04zss) from a vulnerability perspective remains.
+![Filtered Report](/assets/FilteredReport.png)
+
+A single item of interest from a vulnerability perspective remains:
+![Single Item of Interest](/assets/SingleItemOfInterest.png)
+
 The issue is referenced as [squid:S2976](https://sonarcloud.io/organizations/larrysingleton-github/rules#rule_key=squid%3AS2976) and is contained in [FilePath.java.](https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/FilePath.java) 
 The critical issue is tagged as belonging to [owasp-a9](https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities) which is labelled as the **"Top 10 of 2013 - A9 - Using Components with Known Vulnerabilities"**.
 
