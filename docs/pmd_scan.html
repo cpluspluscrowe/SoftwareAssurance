@@ -1,0 +1,136 @@
+<html><head><title>PMD</title></head><body>
+<center><h3>PMD report</h3></center><center><h3>Problems found</h3></center><table align="center" cellspacing="0" cellpadding="3"><tr>
+<th>#</th><th>File</th><th>Line</th><th>Problem</th></tr>
+<tr bgcolor="lightgrey">
+<td align="center">1</td>
+<td width="*%">//jenkins\cli\src\main\java\hudson\cli\DiagnosedStreamCorruptionException.java</td>
+<td align="center" width="5%">19</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'readAhead' is stored directly.</a></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td width="*%">//jenkins\cli\src\main\java\hudson\cli\DiagnosedStreamCorruptionException.java</td>
+<td align="center" width="5%">19</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'readBack' is stored directly.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">3</td>
+<td width="*%">//jenkins\cli\src\main\java\hudson\cli\DiagnosedStreamCorruptionException.java</td>
+<td align="center" width="5%">31</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'readBack' may expose an internal array.</a></td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td width="*%">//jenkins\cli\src\main\java\hudson\cli\DiagnosedStreamCorruptionException.java</td>
+<td align="center" width="5%">35</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'readAhead' may expose an internal array.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">5</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\Launcher.java</td>
+<td align="center" width="5%">233</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'masks' may expose an internal array.</a></td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\Launcher.java</td>
+<td align="center" width="5%">1272</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'env' is stored directly.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">7</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\Launcher.java</td>
+<td align="center" width="5%">1272</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'masks' is stored directly.</a></td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\Launcher.java</td>
+<td align="center" width="5%">1348</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'cmd' is stored directly.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">9</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\model\Fingerprint.java</td>
+<td align="center" width="5%">885</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'md5sum' is stored directly.</a></td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\model\TimeSeries.java</td>
+<td align="center" width="5%">91</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'history' may expose an internal array.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">11</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\security\ContainerAuthentication.java</td>
+<td align="center" width="5%">73</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'authorities' may expose an internal array.</a></td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\security\HudsonPrivateSecurityRealm.java</td>
+<td align="center" width="5%">514</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'TEST_AUTHORITY' may expose an internal array.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">13</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\triggers\SCMTrigger.java</td>
+<td align="center" width="5%">545</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'actions' is stored directly.</a></td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\util\ReflectionUtils.java</td>
+<td align="center" width="5%">110</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'genericTypes' may expose an internal array.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">15</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\util\ReflectionUtils.java</td>
+<td align="center" width="5%">116</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'annotations' may expose an internal array.</a></td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\util\ReflectionUtils.java</td>
+<td align="center" width="5%">122</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'names' may expose an internal array.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">17</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\util\ReflectionUtils.java</td>
+<td align="center" width="5%">197</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'annotations' may expose an internal array.</a></td>
+</tr>
+<tr>
+<td align="center">18</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\util\ReflectionUtils.java</td>
+<td align="center" width="5%">202</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#MethodReturnsInternalArray">Returning 'annotations' may expose an internal array.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">19</td>
+<td width="*%">//jenkins\core\src\main\java\hudson\util\Secret.java</td>
+<td align="center" width="5%">79</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'iv' is stored directly.</a></td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td width="*%">//jenkins\core\src\main\java\jenkins\util\xstream\XStreamDOM.java</td>
+<td align="center" width="5%">143</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'attributes' is stored directly.</a></td>
+</tr>
+<tr bgcolor="lightgrey">
+<td align="center">21</td>
+<td width="*%">//jenkins\test\src\test\java\jenkins\security\security218\ysoserial\Deserializer.java</td>
+<td align="center" width="5%">38</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'bytes' is stored directly.</a></td>
+</tr>
+<tr>
+<td align="center">22</td>
+<td width="*%">//jenkins\test\src\test\java\lib\form\RepeatableTest.java</td>
+<td align="center" width="5%">325</td>
+<td width="*"><a href="https://pmd.github.io/pmd-5.8.1/pmd-java/rules/java/sunsecure.html#ArrayIsStoredDirectly">The user-supplied array 'foo' is stored directly.</a></td>
+</tr>
+</table></body></html>
