@@ -21,12 +21,12 @@ During manual code review for CSRF, our main objective was to find where they di
 
 This code brings in the request and checks to see if the current CSRF token string matches the one from the request. If it does, return true, otherwise return false. If the callee returns false, the caller will raise an exception and the request to the server will be cancelled.
 
-## XSS Code(ish) review
-XSS prevention is an important part of any solid web app. If XSS prevention falls apart, many other attacks that were mitigated earlier are now null and void becuase XSS can work around them. Jenkins uses a plugin called "jelly" to do its XSS filtering in their templates. Below is a template that they use on their "About Us" page:
+## XSS Code review
+XSS prevention is an important part of any solid web app. If XSS prevention falls apart, many other attacks that were mitigated earlier are now null and void because XSS can work around them. Jenkins uses a plugin called "jelly" to do its XSS filtering in their templates. Below is a template that they use on their "About Us" page:
 
 ![About Us](assets/xss_protection_jelly.png)
 
-This filters variables coming into the template from either user or server side input, assuming 'jelly' is turned on at the top of the document. 
+This filter variables coming into the template from either user or server side input, assuming 'jelly' is turned on at the top of the document. 
 
 # Summary of Key Findings
 
@@ -74,6 +74,8 @@ The critical issue is tagged as belonging to [owasp-a9](https://www.owasp.org/in
 
 After a full review of the vulnerability, it was decided a pull request could be made:
 * jenkinsci/jenkins pull request [#3161](https://github.com/jenkinsci/jenkins/pull/3161) was submitted Nov 26, 2017
+
+## PMD Review
 
 Additionally, a [PMD](https://cpluspluscrowe.github.io/SoftwareAssurance/pmd_scan.html) scan was run on Jenkins. This scan looked for issues relating to Sun Microsystems security recommendations (now Oracle recommendations).
 
