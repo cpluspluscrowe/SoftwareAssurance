@@ -14,8 +14,19 @@ The code review strategy being used for this report will be a light weight peer 
 # Manual Code Review
 The code being reviewed related to CSRF vulnerabilities which related directly back to our mis-use cases and threat models.
 
-* https://github.com/larrysingleton/jenkins/tree/master/core/src/main/java/hudson/security/csrf
+## CSRF Code Review
+During manual code review for CSRF, our main objective was to find where they did the CSRF token validation for jenkins. This code was found and is located [here](https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/security/csrf/DefaultCrumbIssuer.java). The code in question is below:
 
+![CSRF validation](assets/validate_csrf_code.png)
+
+This code brings in the request and checks to see if the current CSRF token string matches the one from the request. If it does, return true, otherwise return false. If the callee returns false, the caller will raise an exception and the request to the server will be cancelled.
+
+## XSS Code(ish) review
+XSS prevention is an important part of any solid web app. If XSS prevention falls apart, many other attacks that were mitigated earlier are now null and void becuase XSS can work around them. Jenkins uses a plugin called "jelly" to do its XSS filtering in their templates. Below is a template that they use on their "About Us" page:
+
+![About Us](assets/xss_protection_jelly.png)
+
+This filters variables coming into the template from either user or server side input, assuming 'jelly' is turned on at the top of the document. 
 
 # Summary of Key Findings
 
