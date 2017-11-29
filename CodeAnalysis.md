@@ -23,8 +23,8 @@ The code being reviewed related to CSRF vulnerabilities which related directly b
 During a manual scan of the code and associated documentation, it was discovered that the existing documentation was out of date and needed a little touch up. In this case, the documentation made reference to a CSRF feature being disabled by default. This isn't entirely accurate however. This feature is only disabled by default in Jenkins v1.x and when upgrading to v2.x. If a use initially installed v2.x however, the feature is enabled by default.
 
 * jenkins-infra/jenkins.io pull request [#1233](https://github.com/jenkins-infra/jenkins.io/pull/1233) was submitted on Nov 17, 2017
-* The request accepted and merged into the master on Nov 18th, 2017 after a suggested additional change was submitted
-* A mention on the course project page [2017 Hall of Fame](https://robinagandhi.github.io/swa/pages/halloffame.html) has been made
+* The request was accepted and merged into the master branch on Nov 18th, 2017 after a suggested additional change was submitted
+* A mention on the course project page has been made: [2017 Hall of Fame](https://robinagandhi.github.io/swa/pages/halloffame.html)
 * The updated documentation including the above approved change can be found here:
     * https://jenkins.io/doc/book/system-administration/security/
 
