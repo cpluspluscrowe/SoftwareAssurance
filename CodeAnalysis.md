@@ -81,7 +81,7 @@ After a full review of the vulnerability, it was decided a pull request could be
 * jenkinsci/jenkins pull request [#3161](https://github.com/jenkinsci/jenkins/pull/3161) was submitted Nov 26, 2017
 * Issue [JENKINS-48227](https://issues.jenkins-ci.org/browse/JENKINS-48227)
 
-In this contribution, the vulnerability was addressed in the code base. To verify the fix, the code was once again uploaded to Sonar Cloud to ensure the vulnerability was no longer reported. A static method toPath() was added upon recommendation from the community, as well as removal of the offending code an introduction of a new method Files.createTempDirectory(). Finally, to ensure the code fix is valid, 2 new test cases were added. During this addition of Junit test cases, it was noticed that 2 cases were failing, which were also repaired.
+In this contribution, the vulnerability was addressed in the code base. To verify the fix, the code was once again uploaded to Sonar Cloud to ensure the vulnerability was no longer reported. A static method toPath() was added upon recommendation from the community, as well as removal of the vulnerability and introduction of a new API call to Files.createTempDirectory(). Finally, to ensure the code fix was valid, 2 new test cases were added. During this addition of Junit test cases, it was noticed that 2 cases were failing, which were also repaired.
 
 ## PMD Review
 
