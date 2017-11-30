@@ -39,6 +39,7 @@ This filter variables coming into the template from either user or server side i
 ## Jenkins.io
 During a manual scan of the code and associated documentation, it was discovered that the existing documentation was out of date and needed a little touch up. In this case, the documentation made reference to a CSRF feature being disabled by default. This isn't entirely accurate however. This feature is only disabled by default in Jenkins v1.x and when upgrading to v2.x. If a use initially installed v2.x however, the feature is enabled by default.
 
+### Contribution
 * jenkins-infra/jenkins.io pull request [#1233](https://github.com/jenkins-infra/jenkins.io/pull/1233) was submitted on Nov 17, 2017
 * The request was accepted and merged into the master branch on Nov 18th, 2017 after a suggested additional change was submitted
 * A mention on the course project page has been made: [2017 Hall of Fame](https://robinagandhi.github.io/swa/pages/halloffame.html)
@@ -82,6 +83,7 @@ The critical issue is tagged as belonging to [owasp-a9](https://www.owasp.org/in
 * See [CWE 937](https://cwe.mitre.org/data/definitions/937.html) CWE CATEGORY: OWASP Top Ten 2013 Category A9 - Using Components with Known Vulnerabilities
     * "This is an unusual category. CWE does not cover the limitations of human processes and procedures that cannot be described in terms of a specific technical weakness as resident in the code, architecture, or configuration of the software. Since "known vulnerabilities" can arise from any kind of weakness, it is not possible to map this OWASP category to other CWE entries, since it would effectively require mapping this category to ALL weaknesses." 
 
+### Contribution
 After a full review of the vulnerability, it was decided a pull request could be made:
 * jenkinsci/jenkins pull request [#3161](https://github.com/jenkinsci/jenkins/pull/3161) was submitted Nov 26, 2017
 
