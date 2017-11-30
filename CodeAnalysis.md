@@ -1,12 +1,5 @@
 # Jenkins Code Analysis - Team JAX
 
-2-3 page report that describes the following:
-* Code review strategy
-* Manual code review of critical security functions identified in mis-use cases and threat models.
-* Automated code scanning (if available). Include links to full reports.
-* Summary of key findings from manual and/or automated scanning. This may include: Categorization, Mappings to CWEs, CAPECs, Risk Levels etc.
-* Links to any pull requests, issues, discussion, etc. from the team to the original project and any follow-up interactions.
-
 # Code Review Strategy
 No formal code review system was used, rather a direct link to the important areas of the github project was shared out and used a reference base to begin a focused effort.
 The code review strategy used for this report will is a light weight ad hoc peer code review process in conjunction with a checklist strategy.
