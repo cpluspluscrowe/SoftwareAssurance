@@ -27,6 +27,13 @@ This filter variables coming into the template from either user or server side i
 * See [CWE-79](https://cwe.mitre.org/data/definitions/79.html): Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
 
 
+## Authentication Code review
+Jenkins has a few configurable methods of Authentication. The following is the typical authentication algorithm.
+![Auth](assets/authenticationCode.png)
+
+This code will return the equivalent of false if a password is not correct or a user does not exist.
+
+
 # Summary of Key Findings
 
 ## Jenkins.io
