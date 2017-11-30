@@ -8,8 +8,9 @@
 * Links to any pull requests, issues, discussion, etc. from the team to the original project and any follow-up interactions.
 
 # Code Review Strategy
-The code review strategy being used for this report will be a light weight peer code review process using a Weakness Analysis Review.
-
+No formal code review system was used, rather a direct link to the important areas of the github project was shared out and used a reference base to begin a focused effort.
+The code review strategy used for this report will is a light weight ad hoc peer code review process in conjunction with a checklist strategy.
+This checklist strategy was used to filter through the code to find where different security measures were actually being implemented, thus confirming what the documentation reported.  
 
 # Manual Code Review
 The code being reviewed related to CSRF vulnerabilities which related directly back to our mis-use cases and threat models.
