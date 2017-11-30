@@ -22,9 +22,9 @@ XSS prevention is an important part of any solid web app. If XSS prevention fall
 
 ![About Us](assets/xss_protection_jelly.png)
 
-This filter variables coming into the template from either user or server side input, assuming 'jelly' is turned on at the top of the document. 
+This filter variables coming into the template from either user or server side input, assuming 'jelly' is turned on at the top of the document.
 
-* See [CWE-79](https://cwe.mitre.org/data/definitions/79.html): Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') 
+* See [CWE-79](https://cwe.mitre.org/data/definitions/79.html): Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
 
 
 # Summary of Key Findings
@@ -74,7 +74,7 @@ The issue is referenced as [squid:S2976](https://sonarcloud.io/organizations/lar
 The critical issue is tagged as belonging to [owasp-a9](https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities).
 
 * See [CWE 937](https://cwe.mitre.org/data/definitions/937.html) CWE CATEGORY: OWASP Top Ten 2013 Category A9 - Using Components with Known Vulnerabilities
-    * "This is an unusual category. CWE does not cover the limitations of human processes and procedures that cannot be described in terms of a specific technical weakness as resident in the code, architecture, or configuration of the software. Since "known vulnerabilities" can arise from any kind of weakness, it is not possible to map this OWASP category to other CWE entries, since it would effectively require mapping this category to ALL weaknesses." 
+    * "This is an unusual category. CWE does not cover the limitations of human processes and procedures that cannot be described in terms of a specific technical weakness as resident in the code, architecture, or configuration of the software. Since "known vulnerabilities" can arise from any kind of weakness, it is not possible to map this OWASP category to other CWE entries, since it would effectively require mapping this category to ALL weaknesses."
 
 ### Contribution
 After a full review of the vulnerability, it was decided a pull request could be made:
@@ -88,3 +88,6 @@ In this contribution, the vulnerability was addressed in the code base. To verif
 Additionally, a [PMD](https://cpluspluscrowe.github.io/SoftwareAssurance/pmd_scan.html) scan was run on Jenkins. This scan looked for issues relating to Sun Microsystems security recommendations (now Oracle recommendations).
 
 One of the two primary issues was that arrays were stored directly in other objects. In other words, an array is essentially stored in some newly created objects. The second issues has to do with returning arrays directly. In both cases, the data referenced in the objects can be modified outside the object, and the changes will be reflected in the object. If this is not intended and accounted for, it can lead to bugs and/or security flaws.  
+
+ - See [CWE-607](https://cwe.mitre.org/data/definitions/607.html): Public Static Final Field References Mutable Object
+ - See [CWE-375](https://cwe.mitre.org/data/definitions/375.html): Returning a Mutable Object to an Untrusted Caller
