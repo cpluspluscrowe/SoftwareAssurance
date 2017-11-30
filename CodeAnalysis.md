@@ -22,12 +22,17 @@ During manual code review for CSRF, our main objective was to find where they di
 
 This code brings in the request and checks to see if the current CSRF token string matches the one from the request. If it does, return true, otherwise return false. If the callee returns false, the caller will raise an exception and the request to the server will be cancelled.
 
+* See [CWE-352](https://cwe.mitre.org/data/definitions/352.html) Cross-Site Request Forgery (CSRF)
+
 ## XSS Code review
 XSS prevention is an important part of any solid web app. If XSS prevention falls apart, many other attacks that were mitigated earlier are now null and void because XSS can work around them. Jenkins uses a plugin called "jelly" to do its XSS filtering in their templates. Below is a template that they use on their "About Us" page:
 
 ![About Us](assets/xss_protection_jelly.png)
 
 This filter variables coming into the template from either user or server side input, assuming 'jelly' is turned on at the top of the document. 
+
+* See [CWE-79](https://cwe.mitre.org/data/definitions/79.html): Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') 
+
 
 # Summary of Key Findings
 
@@ -70,8 +75,12 @@ however only 1 is related to a java file, the other 8 to javascript eval calls.
 A single item of interest from a vulnerability perspective remains:
 ![Single Item of Interest](/assets/SingleItemOfInterest.png)
 
+
 The issue is referenced as [squid:S2976](https://sonarcloud.io/organizations/larrysingleton-github/rules#rule_key=squid%3AS2976) and is contained in [FilePath.java.](https://github.com/jenkinsci/jenkins/blob/master/core/src/main/java/hudson/FilePath.java)
-The critical issue is tagged as belonging to [owasp-a9](https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities) which is labelled as the **"Top 10 of 2013 - A9 - Using Components with Known Vulnerabilities"**.
+The critical issue is tagged as belonging to [owasp-a9](https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities).
+
+* See [CWE 937](https://cwe.mitre.org/data/definitions/937.html) CWE CATEGORY: OWASP Top Ten 2013 Category A9 - Using Components with Known Vulnerabilities
+    * "This is an unusual category. CWE does not cover the limitations of human processes and procedures that cannot be described in terms of a specific technical weakness as resident in the code, architecture, or configuration of the software. Since "known vulnerabilities" can arise from any kind of weakness, it is not possible to map this OWASP category to other CWE entries, since it would effectively require mapping this category to ALL weaknesses." 
 
 After a full review of the vulnerability, it was decided a pull request could be made:
 * jenkinsci/jenkins pull request [#3161](https://github.com/jenkinsci/jenkins/pull/3161) was submitted Nov 26, 2017
