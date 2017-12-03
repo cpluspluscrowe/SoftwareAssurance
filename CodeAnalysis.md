@@ -44,7 +44,7 @@ The jenkinsci/jenkins github project contains the core codebase.
 [There's a lot more to the Jenkins project than just code.](https://github.com/jenkinsci/jenkins/blob/master/CONTRIBUTING.md)
 The codebase for this project was cloned locally and the project built using maven. Many tests failed, which is to be expected due to specific environmental factors required for some of these cases to be successful.
 
-A small maven script was written so that static code analysis could be run and uploaded to Sonar Cloud. This bypasses all the test runs and configures the sonar plugin to upload the report results to Sonar Cloud for further review and analysis.
+A small maven script was written so that static code analysis could be run and uploaded to [Sonar Cloud](https://about.sonarcloud.io/), a free service for open source projects. This bypasses all the test runs and configures the sonar plugin to upload the report results to Sonar Cloud for further review and analysis.
 
 ```maven
 mvn org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar \
@@ -57,7 +57,7 @@ mvn org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar \
     -Dsonar.cfamily.build-wrapper-output.bypass=true
 ```
 
-The full [Sonar Cloud Report](https://sonarcloud.io/dashboard?id=org.jenkins-ci.main%3Apom%3Amaster) of the core codebase shows 645 Bugs and 361 Vulnerabilities.
+The full [Sonar Cloud Analysis Report](https://sonarcloud.io/dashboard?id=org.jenkins-ci.main%3Apom%3Amaster) of the core codebase shows 646 Bugs and 361 vulnerabilities as of this writing.
 
 ![Sonar Cloud Overview](/assets/SonarCloudOverview.png)
 
@@ -78,8 +78,9 @@ The critical issue is tagged as belonging to [owasp-a9](https://www.owasp.org/in
 
 ### Contribution
 After a full review of the vulnerability, it was decided a pull request could be made:
-* jenkinsci/jenkins pull request [#3161](https://github.com/jenkinsci/jenkins/pull/3161) was submitted Nov 26, 2017
 * Issue [JENKINS-48227](https://issues.jenkins-ci.org/browse/JENKINS-48227)
+* jenkinsci/jenkins pull request [#3161](https://github.com/jenkinsci/jenkins/pull/3161) was submitted Nov 26, 2017
+* After multiple rounds of back and forth, along with a couple of merge conflict resolutions caused by other code merges occurring before this request, the [first approval](https://github.com/jenkinsci/jenkins/pull/3161#pullrequestreview-80697605) was received 12/03/2017.
 
 In this contribution, the vulnerability was addressed in the code base. To verify the fix, the code was once again uploaded to Sonar Cloud to ensure the vulnerability was no longer reported. A static method toPath() was added upon recommendation from the community, as well as removal of the vulnerability and introduction of a new API call to Files.createTempDirectory(). Finally, to ensure the code fix was valid, 2 new test cases were added. During this addition of Junit test cases, it was noticed that 2 cases were failing, which were also repaired.
 
