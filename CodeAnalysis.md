@@ -27,6 +27,19 @@ This filter variables coming into the template from either user or server side i
 * See [CWE-79](https://cwe.mitre.org/data/definitions/79.html): Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')
 
 
+## Authentication Code review
+Jenkins has a few configurable methods of Authentication. The following is the typical authentication algorithm.
+![Auth](assets/authenticationCode.png)
+
+This code will return the equivalent of false if a password is not correct or a user does not exist.
+
+## Master/Slave Code review
+Jenkins has a few java files concerning slave/master relations: Slave.java, SlaveComputer.java, GlobalSecurityConfiguration.java, JnlpSlaveAgentProtocol3.java, JnlpSlaveAgentProtocol.java, and TcpSlaveAgentListener.java.
+
+One piece that I noticed in most of the files is the SLAVE_SECRET key.  This key is passed around and used as an HMACConfidentialKey, I assume for accessing the slave computer.  The key is passed around and seems like a likely place for a security vulnerability.  
+
+More noteable, are the instances of code checking instanceof slave.  According to comments, while a node is being instantiated and initiated the node exists but is not yet classified as a slave node.  The many places checking if the node has been classified as a slave imply that unwanted circumstances occur when this non-slave node runs code.  This is likely because the non-slave node has different file and executable permissions.  There even exists checks which log when non-slave nodes exist.  This seems to imply that these non-slave nodes sometimes exist too long.  A hijacked non-slave node is a likely opportunity for  hackers to access the master node. 
+
 # Summary of Key Findings
 
 ## Jenkins.io
